@@ -1,41 +1,74 @@
-# Website
+# Documentación de Filament en Español
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+¡Bienvenido/a al repositorio de la **traducción al español** de la documentación de [FilamentPHP](https://filamentphp.com/)! 🇪🇸  
 
-## Installation
+Nuestro objetivo es que la comunidad hispanohablante pueda aprender y trabajar con Filament de forma más cómoda, sin la barrera del idioma.  
 
-```bash
-yarn
-```
+Este proyecto fue iniciado por **[Daljo25](https://github.com/daljo25)** y cuenta con la colaboración de la comunidad. 🙌
 
-## Local Development
+---
 
-```bash
-yarn start
-```
+## 📖 Historia del proyecto
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Este proyecto nace de la necesidad de hacer más accesible la documentación de **Filament** en español.  
+De momento, estamos **traduciendo la documentación de la versión 4 (v4)**, pero más adelante añadiremos también las versiones anteriores.
 
-## Build
+La web de la documentación se construye con **[Docusaurus](https://docusaurus.io/)** y el contenido está disponible aquí como **código abierto**, para que cualquier persona pueda aportar.
 
-```bash
-yarn build
-```
+---
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## ⚠️ Aviso importante
 
-## Deployment
+> **Este repositorio contiene una traducción no oficial** de la documentación original de Filament.  
+> No es mantenida ni respaldada por el equipo oficial de Filament.  
 
-Using SSH:
+Consultamos en el [Discord de Filament](https://discord.gg/filament) si había algún inconveniente en publicar esta traducción y **Dennis Koch** (del Core Team de Filament) nos respondió lo siguiente:
 
-```bash
-USE_SSH=true yarn deploy
-```
+> "Hey,  
+> thanks for asking and putting in the effort to translate the docs. Unfortunately, we don't have the capacity to have different language versions and keep them up to date, so we won't publish any of those on the website.  
+>   
+> You are free to host share them on your website, but please make it clear, that this is unofficial docs and not created by the Filament team."
 
-Not using SSH:
+Por lo tanto, esta es una iniciativa **comunitaria e independiente**.
 
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
+---
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+## 🤝 Cómo colaborar
+
+Este es un proyecto de la comunidad y **cualquiera puede contribuir**. Hay varias formas de hacerlo:  
+
+- 🐛 **Reportar errores** en la traducción o faltas de ortografía: abre un [Issue](https://github.com/filamentenespanol/documentacion/issues).
+- ✍️ **Traducir y mejorar textos**: envía un Pull Request con tus cambios.
+- 💬 **Sugerir mejoras o dar feedback** sobre la estructura o terminología.
+
+---
+
+## 🚀 Cómo usar el repo
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/filamentenespanol/documentacion.git
+   ```
+2. Instala las dependencias:
+   ```bash
+   pnpm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```bash
+   pnpm start
+   ```
+4. Abre `http://localhost:3000` en tu navegador para ver la documentación traducida.
+
+---
+
+## 🌐 Comunidad
+
+- 📖 Documentación traducida: [docs.filamentenespanol.com](https://docs.filamentenespanol.com)  
+- 📰 Blog con noticias y tutoriales: [filamentenespanol.com](https://filamentenespanol.com)  
+- 💻 GitHub: [filamentenespanol/documentacion](https://github.com/filamentenespanol/documentacion)  
+- 💬 Discord de Filament: [Filament Discord](https://discord.gg/filament)  
+
+---
+
+✨ Gracias por ser parte de este esfuerzo para que **Filament esté disponible en español**.  
+La colaboración de todos hace que la comunidad crezca.
