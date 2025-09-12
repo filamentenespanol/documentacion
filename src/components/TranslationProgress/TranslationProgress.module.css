@@ -1,0 +1,109 @@
+.translationProgressSection {
+  padding: 2rem 0;
+  background: var(--ifm-background-color);
+}
+
+.progressAlert {
+  border-radius: 12px;
+  border-left: 4px solid var(--ifm-color-warning);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+.progressHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.progressTitle {
+  margin: 0;
+  color: var(--ifm-color-warning-dark);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.progressDescription {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--ifm-font-color-base);
+}
+
+.progressBarContainer {
+  margin: 1.5rem 0;
+}
+
+.progressBarBackground {
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: 25px;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progressBar {
+  background: linear-gradient(90deg, 
+    var(--ifm-color-primary) 0%, 
+    var(--ifm-color-primary-light) 100%);
+  height: 100%;
+  border-radius: 25px;
+  transition: width 0.8s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 12px;
+  min-width: 60px;
+  position: relative;
+}
+
+.progressText {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.callToAction {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.callToAction p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.contributeLink {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom-color 0.2s ease;
+}
+
+.contributeLink:hover {
+  border-bottom-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .progressTitle {
+    font-size: 1.3rem;
+  }
+
+  .progressDescription {
+    font-size: 1rem;
+  }
+
+  .progressBarBackground {
+    height: 25px;
+  }
+
+  .progressText {
+    font-size: 0.8rem;
+  }
+}

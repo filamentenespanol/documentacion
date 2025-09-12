@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import TranslationProgress from '@site/src/components/TranslationProgress';
 import Heading from '@theme/Heading';
 
 import styles from './index.module.css';
@@ -34,9 +35,10 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title={`${siteConfig.title} | Documentacion no oficial`}
-      description="Documentacion no oficial de Filamentphp en español">
+      description="Documentacion no oficial de Filamentphp en español">
       <HomepageHeader />
       <main>
+        <TranslationProgress progress={22} />
         <HomepageFeatures />
       </main>
     </Layout>
