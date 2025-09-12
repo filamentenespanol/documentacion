@@ -91,5 +91,14 @@ Algunas formas de ayudar:
 
 ---
 
+## 📜 Licencia
+
+Este proyecto es una **traducción comunitaria no oficial** de la documentación de Filament.  
+
+- El contenido original pertenece al equipo de **Filament** (licencia MIT).  
+- Esta traducción está publicada bajo la licencia **[CC BY-SA 4.0](./LICENSE.md)**.  
+
+Consulta el archivo [LICENSE.md](./LICENSE.md) para más detalles.
+
 ✨ Gracias por ser parte de este esfuerzo para que **Filament esté disponible en español**.  
 La colaboración de todos hace que la comunidad crezca.
