@@ -23,20 +23,10 @@ Agradecemos su apertura para permitir esta iniciativa independiente.
 
 ---
 
-## 🚀 Estado del Proyecto y Cómo Contribuir
+## 🚧 Estado del Proyecto y Cómo Contribuir
 
-Este proyecto está en constante evolución y tu ayuda es fundamental. Aquí puedes ver el progreso actual y las áreas donde necesitamos más manos:
-
-| Objetivo                              | Progreso | Estado Actual                         |
-|---------------------------------------|:--------:|---------------------------------------|
-| Traducción contenido v4               |   25%    | Secciones base traducidas             |
-| Verificación de enlaces               |   10%    | Pendiente revisión completa           |
-| Revisión técnica (exactitud)          |   15%    | Validar ejemplos y snippets           |
-| Glosario y términos consistentes      |   20%    | Definir términos clave de Filament    |
-| Guías de estilo y contribución        |   30%    | Borrador listo, requiere feedback     |
-| Accesibilidad y legibilidad           |   20%    | Títulos, contraste, alt en imágenes   |
-| SEO interno (metadatos/slug/títulos)  |   10%    | Pendiente revisión sistemática        |
-| Pruebas locales (build y enlaces)     |   15%    | Revisar warnings del build            |
+Este proyecto está en progreso.  
+Consulta el [estado actualizado y lista de pendientes en GitHub](https://github.com/filamentenespanol/documentacion#-estado-del-proyecto).
 
 ¿Quieres ayudar? Estas son algunas formas:
 
@@ -47,7 +37,7 @@ Este proyecto está en constante evolución y tu ayuda es fundamental. Aquí pue
 
 Enlaces útiles para contribuir:
 - GitHub del proyecto: https://github.com/filamentenespanol/documentacion
-- Guía de contribución (próximamente en el repo, sección CONTRIBUTING.md)
+- 📑 [Guía de Contribución](https://github.com/filamentenespanol/documentacion/blob/main/CONTRIBUTING.md)
 - Issues abiertos: https://github.com/filamentenespanol/documentacion/issues
 
 ---
@@ -77,6 +67,6 @@ Enlaces útiles para contribuir:
 
 ## 🤝 Agradecimientos
 
-Este proyecto fue iniciado por la comunidad, con el impulso de [Daljo25](https://github.com/Daljo25), y continúa gracias a las contribuciones de muchas personas. ¡Gracias por hacerlo posible!
+Este proyecto fue iniciado por la comunidad, con el impulso de [Daljo25](https://github.com/daljo25), y continúa gracias a las contribuciones de muchas personas. ¡Gracias por hacerlo posible!
 
 ---
