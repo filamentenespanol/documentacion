@@ -64,7 +64,7 @@ Este archivo contiene la **traducción no oficial** de los cambios publicados en
 
 ## [v4.0.7] - 04 Sep 2025
 
-### Correcciones
+### 🐛 Correcciones
 - Error en consola con `sidebar.blade.php`.  
 - Arreglo en placeholder y alineación de texto.  
 - Mejoras en traducciones (hebreo, alemán, tailandés, holandés, cantonés).  
@@ -80,7 +80,7 @@ Este archivo contiene la **traducción no oficial** de los cambios publicados en
 
 ## [v4.0.6] - 02 Sep 2025
 
-### Cambios
+### ✨ Cambios
 - Mejora del menú de usuario/tenant en panel de invitados.  
 - Soporte para `null` en títulos.  
 - Nuevo renderer `toText()` para `RichEditor`.  
@@ -203,6 +203,9 @@ Este archivo contiene la **traducción no oficial** de los cambios publicados en
 - Documentación totalmente reestructurada para v4.
 
 [Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.0.0)
+
+---
+## Contribuidores de la traducción
 
 👥 Traducción mantenida por la comunidad de **Filament en Español**.  
 Si quieres colaborar:  
