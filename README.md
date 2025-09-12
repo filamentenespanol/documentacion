@@ -33,13 +33,34 @@ Por lo tanto, esta es una iniciativa **comunitaria e independiente**.
 
 ---
 
+## ✅ Estado del Proyecto
+
+Este proyecto está en progreso y estos son algunos de los objetivos en los que puedes colaborar:
+
+| Objetivo                              | Progreso | Estado Actual                         |
+|---------------------------------------|:--------:|---------------------------------------|
+| Traducción contenido v4               |   25%    | Secciones base traducidas             |
+| Verificación de enlaces               |   10%    | Pendiente revisión completa           |
+| Revisión técnica (exactitud)          |   15%    | Validar ejemplos y snippets           |
+| Glosario y términos consistentes      |   20%    | Definir términos clave de Filament    |
+| Guías de estilo y contribución        |   30%    | Borrador listo, requiere feedback     |
+| Accesibilidad y legibilidad           |   20%    | Títulos, contraste, alt en imágenes   |
+| SEO interno (metadatos/slug/títulos)  |   10%    | Pendiente revisión sistemática        |
+| Pruebas locales (build y enlaces)     |   15%    | Revisar warnings del build            |
+
+---
+
 ## 🤝 Cómo colaborar
 
-Este es un proyecto de la comunidad y **cualquiera puede contribuir**. Hay varias formas de hacerlo:  
+Este es un proyecto de la comunidad y **cualquiera puede contribuir**.  
 
-- 🐛 **Reportar errores** en la traducción o faltas de ortografía: abre un [Issue](https://github.com/filamentenespanol/documentacion/issues).
-- ✍️ **Traducir y mejorar textos**: envía un Pull Request con tus cambios.
-- 💬 **Sugerir mejoras o dar feedback** sobre la estructura o terminología.
+Consulta la [Guía de Contribución](./CONTRIBUTING.md) para conocer los pasos detallados.  
+
+Algunas formas de ayudar:
+- 🐛 Reportar errores en la traducción o faltas de ortografía: abre un [Issue](https://github.com/filamentenespanol/documentacion/issues).
+- ✍️ Mejorar traducciones: envía un Pull Request.
+- 🔗 Verificar enlaces y ejemplos: revisa contribuciones y avísanos de problemas.
+- 💬 Sugerir mejoras o dar feedback sobre la estructura o terminología.
 
 ---
 
