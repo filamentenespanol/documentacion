@@ -48,3 +48,90 @@
 
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.1);
 }
+
+/* ===== Cookie Consent Banner Styles ===== */
+
+.cookie-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--ifm-color-primary-darkest);
+  color: var(--ifm-text-color);
+  font-size: 14px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.2);
+  z-index: 9999;
+}
+
+.cookie-content {
+  flex: 1 1 auto;
+}
+
+.cookie-container a {
+  color: var(--ifm-color-primary-light);
+  text-decoration: underline;
+}
+
+.cookie-accept {
+  background: var(--ifm-color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 13px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.cookie-accept:hover {
+  background: var(--ifm-color-primary-light);
+}
+
+.cookie-decline {
+  background: var(--ifm-color-primary-lighter);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 13px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.cookie-decline:hover {
+  background: var(--ifm-color-primary-lightest);
+}
+
+@media (max-width: 768px) {
+  .cookie-container {
+    flex-direction: column; /* Texto separado de los botones */
+    text-align: center;
+    padding: 16px;
+  }
+
+  .cookie-content {
+    margin-bottom: 12px; /* separa el texto de los botones */
+    flex: none;
+    width: 100%;
+  }
+
+  /* Contenedor de botones en horizontal */
+  .cookie-container > div:last-child {
+    display: flex;
+    justify-content: center;
+    gap: 12px; /* separación entre botones */
+    width: 100%;
+  }
+
+  .cookie-accept,
+  .cookie-decline {
+    flex: 0 0 auto;
+    min-width: 120px; /* ancho mínimo para que no se queden muy chicos */
+    padding: 8px 16px;
+  }
+}
