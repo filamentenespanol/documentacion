@@ -38,7 +38,7 @@ export default function Home(): ReactNode {
       description="Documentacion no oficial de Filamentphp en español">
       <HomepageHeader />
       <main>
-        <TranslationProgress progress={22} />
+        <TranslationProgress progress={32} />
         <HomepageFeatures />
       </main>
     </Layout>
