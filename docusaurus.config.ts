@@ -72,6 +72,14 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: "img/docusaurus-social-card.jpg",
+    // Algolia search config
+    algolia: {
+      apiKey: "243964705fe048036931848c24a0790e",
+      indexName: "Documentación no oficial de Filament en español",
+      appId: "K3IFF9JNIZ",
+      contextualSearch: true,
+      searchPagePath: 'search',
+    },
     navbar: {
       title: "Filament en español",
       logo: {
