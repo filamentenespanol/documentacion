@@ -5,6 +5,15 @@ Este archivo contiene la **traducción no oficial** de los cambios publicados en
 > ⚠️ **Aviso importante**: Esta traducción es realizada de forma comunitaria y no tiene carácter oficial.  
 > La fuente de verdad siempre será el repositorio oficial de Filament.  
 > Consulta siempre el changelog original para confirmar detalles técnicos.
+---
+
+## [v4.0.12] - 12 Sep 2025
+
+### 🐛 Correcciones
+- Revertir: "Arreglo: orden alfabético por defecto en grupo de navegacion".
+
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.0.12)
 
 ---
 
