@@ -26,13 +26,16 @@ export default function prismIncludeLanguages(
       require("prismjs/components/prism-markup-templating.js");
     }
     // eslint-disable-next-line global-require, import/no-dynamic-require
-    require(`prismjs/components/prism-${lang}`);
+    require(`prismjs/components/prism-${lang}.js`);
   });
 
   // Add Blade support
 
+  require("prismjs/components/prism-markup.js");
   require("prismjs/components/prism-markup-templating.js");
-  require("prismjs/components/prism-php");
+  require("prismjs/components/prism-javascript.js");
+  require("prismjs/components/prism-css.js");
+  require("prismjs/components/prism-php.js");
   require("prism-blade");
 
   // Clean up and eventually restore former globalThis.Prism object (if any)
