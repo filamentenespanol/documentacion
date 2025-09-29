@@ -19,7 +19,9 @@
     "@docusaurus/preset-classic": "3.8.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "prism-blade": "^0.0.9",
     "prism-react-renderer": "^2.3.0",
+    "prismjs": "^1.30.0",
     "react": "^19.0.0",
     "react-cookie-consent": "^9.0.0",
     "react-dom": "^19.0.0"

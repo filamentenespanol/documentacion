@@ -20,9 +20,15 @@ importers:
       clsx:
         specifier: ^2.0.0
         version: 2.1.1
+      prism-blade:
+        specifier: ^0.0.9
+        version: 0.0.9
       prism-react-renderer:
         specifier: ^2.3.0
         version: 2.4.1(react@19.1.1)
+      prismjs:
+        specifier: ^1.30.0
+        version: 1.30.0
       react:
         specifier: ^19.0.0
         version: 19.1.1
@@ -3961,6 +3967,9 @@ packages:
   pretty-time@1.1.0:
     resolution: {integrity: sha512-28iF6xPQrP8Oa6uxE6a1biz+lWeTOAPKggvjB8HAs6nVMKZwf5bG++632Dx614hIWgUPkgivRfG+a8uAXGTIbA==}
     engines: {node: '>=4'}
+
+  prism-blade@0.0.9:
+    resolution: {integrity: sha512-B29hK/M4MzTDiInHRVHufbSOq8iKYj81Jh5tM2rp4zRRREoVED2m0+Phu4NYCcyTjlY+YVtRMy2dVqJ6wnGDLg==}
 
   prism-react-renderer@2.4.1:
     resolution: {integrity: sha512-ey8Ls/+Di31eqzUxC46h8MksNuGx/n0AAC8uKpwFau4RPDYLuE3EXTp8N8G2vX2N7UC/+IXeNUnlWBGGcAG+Ig==}
@@ -10060,6 +10069,8 @@ snapshots:
       renderkid: 3.0.0
 
   pretty-time@1.1.0: {}
+
+  prism-blade@0.0.9: {}
 
   prism-react-renderer@2.4.1(react@19.1.1):
     dependencies:
