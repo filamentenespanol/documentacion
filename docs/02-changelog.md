@@ -5,6 +5,66 @@ Este archivo contiene la **traducción no oficial** de los cambios publicados en
 > ⚠️ **Aviso importante**: Esta traducción es realizada de forma comunitaria y no tiene carácter oficial.  
 > La fuente de verdad siempre será el repositorio oficial de Filament.  
 > Consulta siempre el changelog original para confirmar detalles técnicos.
+---
+
+## [v4.0.13] - 14 Sep 2025
+
+### ✨ Cambios
+- Traducción al español actualizada - `form.components.php`.
+- Usar `state snapshot` para repetidores y constructores.
+- Renderizar html en administrador de columna.
+- Mas detalles añadidos a la sección de ordern de registros.
+- No invierta los menús desplegables del administrador de filtros y columnas
+- Agregar clase de formulario faltante a un ejemplo de recursos singulares
+
+### 🐛 Correcciones
+- Arreglo: Agrupando cuando `getTitleFromRecordUsing` contiene HtmlString.
+- Arreglo: Representación parcial de componentes de esquema ocultos.
+- Arreglo: Actualización infinita del selector de fecha y hora reactivo no nativo.
+- Arreglo: eliminar la lógica de rotación del botón de colapso de la barra lateral
+- Arreglo: Acción resolver registro cuando el componente tiene relación 
+- Arreglo: Acción de registro en encabezado de tabla
+- Arreglo: Permitir a `RichEditor` trabajar sin registrar atributos ricos en contenido. 
+- Arreglo: Relaciones de esquema anidados. 
+- Arreglo: Inyección de registros en columnas de tablas. 
+- Arreglo: Convertir estado de cadena vacía a nulo antes.
+- Arreglo: Ocultar columnas de tabla de forma responsiva. 
+
+**Contribuidores nuevos:** @ahsanmahmood09 @tedstein @ace-of-aces
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.0.13)
+
+---
+
+## [v4.0.12] - 12 Sep 2025
+
+### 🐛 Correcciones
+- Revertir: "Arreglo: orden alfabético por defecto en grupo de navegacion".
+
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.0.12)
+
+---
+
+## [v4.0.11] - 12 Sep 2025
+
+### ✨ Cambios
+- Permite enlaces relativos en `RichEditor` `LinkAction`.
+- Traducción al ucraniano en Componentes Formulario.
+- Documentación: Renombrar fileAttachmentsProvider para contenido rico en la documentación.
+
+### 🐛 Correcciones
+- Arreglo: Compartiendo filtros de tabla aplazados a widgets.
+- Arreglo: Nombre de esquema de prueba por defecto en páginas con formularios.
+- Arreglo: Prueba de editor rico con HTML.
+- Arreglo: Prueba de recurso anidado.
+- Arreglo: Orden alfabético por defecto en grupo de navegación.
+- Arreglo: Componente `TextEntry` no muestra información relacionada en la edición.
+- Arreglo: `defaultKeySort` no trabaja como se esperaba.
+
+**Contribuidores nuevos:** @alwayshopeless @salamwaddah
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.0.11)
 
 ---
 
