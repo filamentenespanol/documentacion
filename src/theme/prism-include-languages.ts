@@ -29,14 +29,14 @@ export default function prismIncludeLanguages(
     require(`prismjs/components/prism-${lang}.js`);
   });
 
-  // Add Blade support
+  // Add Blade support (se eliminar de momento por error en la libreria, ver issue https://github.com/nicodevs/prism-blade/issues/1)
 
-  require("prismjs/components/prism-markup.js");
+  /* require("prismjs/components/prism-markup.js");
   require("prismjs/components/prism-markup-templating.js");
   require("prismjs/components/prism-javascript.js");
   require("prismjs/components/prism-css.js");
   require("prismjs/components/prism-php.js");
-  require("prism-blade");
+  require("prism-blade"); */
 
   // Clean up and eventually restore former globalThis.Prism object (if any)
   delete (globalThis as Optional<typeof globalThis, "Prism">).Prism;
