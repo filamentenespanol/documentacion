@@ -9,7 +9,20 @@
   "imageSize": 100,
   "commit": true,
   "commitConvention": "angular",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "daljo25",
+      "name": "Daljomar Morillo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7244602?v=4",
+      "profile": "https://github.com/daljo25",
+      "contributions": [
+        "code",
+        "doc",
+        "translation"
+      ]
+    }
+  ],
   "contributorsPerLine": 7,
-  "linkToUsage": true
+  "linkToUsage": true,
+  "commitType": "docs"
 }
