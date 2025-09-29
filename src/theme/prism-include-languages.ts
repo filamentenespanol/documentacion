@@ -23,10 +23,10 @@ export default function prismIncludeLanguages(
   additionalLanguages.forEach((lang) => {
     if (lang === "php") {
       // eslint-disable-next-line global-require
-      require("prismjs/components/prism-markup-templating.js");
+      require("prismjs/components/prism-markup-templating");
     }
     // eslint-disable-next-line global-require, import/no-dynamic-require
-    require(`prismjs/components/prism-${lang}.js`);
+    require(`prismjs/components/prism-${lang}`);
   });
 
   // Add Blade support (se eliminar de momento por error en la libreria, ver issue https://github.com/nicodevs/prism-blade/issues/1)
