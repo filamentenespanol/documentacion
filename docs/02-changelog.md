@@ -5,6 +5,70 @@ Este archivo contiene la **traducción no oficial** de los cambios publicados en
 > ⚠️ **Aviso importante**: Esta traducción es realizada de forma comunitaria y no tiene carácter oficial.  
 > La fuente de verdad siempre será el repositorio oficial de Filament.  
 > Consulta siempre el changelog original para confirmar detalles técnicos.
+--- 
+## [V4.0.17] - 17 sep 2025
+### ✨ Cambios
+- Permitir HTML en la etiqueta y el título de agrupación de tablas.
+
+### 🐛 Correcciones
+- Atributos del editor enriquecido de relaciones de tabla.
+- Constructor de consultas diferido. 
+- Representar parcialmente el formulario de filtros diferidos después de la acción utilizada.
+- Fusionar argumentos de acción sin sobrescribirlos.
+- Manejar correctamente el alias 'as' en orderBy en el componente Select. 
+- Hacer visible el rango de tipos TextInput.
+- Validación del tipo MIME y del tamaño del archivo. 
+- Documentación: Corrige el error de sintaxis. 
+
+**Contribuidores nuevos:** @f-liva
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.0.17)
+
+---
+## [v4.0.16] - 16 sep 2025
+### ✨ Cambios
+- Agregar números de elementos repetidores.
+
+### 🐛 Correcciones
+- Notificación transición oculta para usar visibilidad en lugar de opacidad.
+- doblegar grupos de acción dropdowns. 
+- Soporte para conversión de enumns en estado de cadena.
+- Atributos de contenido rico en relaciones y en blanco.
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.0.16)
+
+---
+## [v4.0.15] - 15 sep 2025
+### ✨ Cambios
+
+### 🐛 Correcciones
+- Problemas de conversión de tipos de estado.
+
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.0.15)
+
+---
+
+## [v4.0.14] - 15 Sep 2025
+
+### ✨ Cambios
+
+### 🐛 Correcciones
+- Arreglo: Probando acgumentos de acción. 
+- Grupo fusionado con columnas por defecto. 
+- Dropdown de grupo de accion por defecto ubicado antes de las columnas de las tabla.
+- Convierte consistentemente los valores de selección en cadenas.
+- Clave de registro perdida.
+- Pestaña hiddenJs().
+- Divisores de fila en tablas de contenido.
+- Enlaces de dominio de arrendatario. 
+- Añadir traducción rusa perdida.
+- Añadir traducción ucraniana perdida.
+
+**Contribuidores nuevos:** @toxageek
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.0.14)
+
 ---
 
 ## [v4.0.13] - 14 Sep 2025
