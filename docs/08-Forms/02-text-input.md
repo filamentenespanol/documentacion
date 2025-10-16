@@ -1,5 +1,5 @@
 ---
-title: Campo de texto
+title: Text input
 ---
 
 ## Introducción
@@ -12,11 +12,9 @@ use Filament\Forms\Components\TextInput;
 TextInput::make('name')
 ```
 
-<AutoScreenshot name="forms/fields/text-input/simple" alt="Campo de texto" version="4.x" />
+## Configurar el tipo de input HTML
 
-## Establecer el tipo de input HTML
-
-Puedes establecer el tipo de cadena usando un conjunto de métodos. Algunos, como `email()`, también proporcionan validación:
+Puedes establecer el tipo de cadena usando varios métodos. Algunos, como `email()`, también proporcionan validación:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -39,7 +37,7 @@ TextInput::make('backgroundColor')
     ->type('color')
 ```
 
-Los métodos de tipo individuales también te permiten pasar un valor booleano para controlar si el campo debe ser de ese tipo o no:
+Los métodos individuales de tipo también aceptan un valor booleano para controlar si el campo debe ser de ese tipo o no:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -54,15 +52,13 @@ TextInput::make('text')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, estos métodos también aceptan una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, estos métodos también aceptan una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-## Establecer el modo de input HTML
+## Configurar el modo de input HTML
 
-Puedes establecer el atributo [`inputmode`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#inputmode) del campo usando el método `inputMode()`:
+Puedes establecer el atributo [`inputmode`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#inputmode) del input usando el método `inputMode()`:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -73,15 +69,13 @@ TextInput::make('text')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `inputMode()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>inputMode()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-## Establecer el paso numérico
+## Configurar el paso numérico
 
-Puedes establecer el atributo [`step`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#step) del campo usando el método `step()`:
+Puedes establecer el atributo [`step`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#step) del input usando el método `step()`:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -92,10 +86,8 @@ TextInput::make('number')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `step()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>step()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ## Autocompletar texto
@@ -121,17 +113,15 @@ TextInput::make('password')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `autocomplete()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>autocomplete()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-Para opciones de autocompletado más complejas, los campos de texto también soportan [datalists](#autocompleting-text-with-a-datalist).
+Para opciones de autocompletado más complejas, los inputs de texto también soportan [datalists](#autocompletar-texto-con-una-datalist).
 
-### Autocompletar texto con un datalist
+### Autocompletar texto con una datalist
 
-Puedes especificar opciones de [datalist](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) para un campo de texto usando el método `datalist()`:
+Puedes especificar opciones de [datalist](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist) para un input de texto usando el método `datalist()`:
 
 ```php
 TextInput::make('manufacturer')
@@ -145,13 +135,11 @@ TextInput::make('manufacturer')
     ])
 ```
 
-Los datalists proporcionan opciones de autocompletado a los usuarios cuando usan un campo de texto. Sin embargo, son solo recomendaciones, y el usuario aún puede escribir cualquier valor en el campo. Si deseas limitar estrictamente a los usuarios a un conjunto de opciones predefinidas, revisa el [campo select](select).
+Las datalists proporcionan opciones de autocompletado a los usuarios cuando usan un input de texto. Sin embargo, son solo recomendaciones, y el usuario aún puede escribir cualquier valor. Si quieres limitar estrictamente a opciones predefinidas, mira el [campo select](select).
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `datalist()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>datalist()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ## Autocapitalizar texto
@@ -166,15 +154,13 @@ TextInput::make('name')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `autocapitalize()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>autocapitalize()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-## Añadir texto como prefijo o sufijo
+## Añadir texto de prefijo/sufijo junto al campo
 
-Puedes colocar texto antes y después del campo usando los métodos `prefix()` y `suffix()`:
+Puedes colocar texto antes y después del input usando los métodos `prefix()` y `suffix()`:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -185,17 +171,13 @@ TextInput::make('domain')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir valores estáticos, los métodos `prefix()` y `suffix()` también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir valores estáticos, los métodos <code>prefix()</code> y <code>suffix()</code> también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-<AutoScreenshot name="forms/fields/text-input/affix" alt="Campo de texto con prefijos y sufijos" version="4.x" />
+### Usar iconos como prefijos/sufijos
 
-### Usar iconos como prefijos o sufijos
-
-Puedes colocar un [icono](../styling/icons) antes y después del campo usando los métodos `prefixIcon()` y `suffixIcon()`:
+Puedes colocar un [icono](../styling/icons) antes y después del input usando los métodos `prefixIcon()` y `suffixIcon()`:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -207,17 +189,13 @@ TextInput::make('domain')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir valores estáticos, los métodos `prefixIcon()` y `suffixIcon()` también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir valores estáticos, los métodos <code>prefixIcon()</code> y <code>suffixIcon()</code> también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
-
-<AutoScreenshot name="forms/fields/text-input/suffix-icon" alt="Campo de texto con icono como sufijo" version="4.x" />
 
 #### Establecer el color del icono de prefijo/sufijo
 
-Los iconos de prefijo y sufijo son grises por defecto, pero puedes establecer un color diferente usando los métodos `prefixIconColor()` y `suffixIconColor()`:
+Los iconos de prefijo/sufijo son grises por defecto, pero puedes establecer otro color usando `prefixIconColor()` y `suffixIconColor()`:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -230,15 +208,13 @@ TextInput::make('domain')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir valores estáticos, los métodos `prefixIconColor()` y `suffixIconColor()` también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir valores estáticos, los métodos <code>prefixIconColor()</code> y <code>suffixIconColor()</code> también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-## Campos de contraseña revelable
+## Inputs de contraseña revelables
 
-Al usar `password()`, también puedes hacer que el campo sea `revealable()`, de modo que el usuario pueda ver en texto plano la contraseña que está escribiendo al hacer clic en un botón:
+Al usar `password()`, también puedes hacer el input `revealable()`, para que el usuario vea en texto plano la contraseña que escribe pulsando un botón:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -248,9 +224,7 @@ TextInput::make('password')
     ->revealable()
 ```
 
-<AutoScreenshot name="forms/fields/text-input/revealable-password" alt="Campo de texto con contraseña revelable" version="4.x" />
-
-Opcionalmente, puedes pasar un valor booleano para controlar si el campo debe ser revelable o no:
+Opcionalmente, puedes pasar un booleano para controlar si el input debe ser revelable o no:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -261,15 +235,13 @@ TextInput::make('password')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `revealable()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>revealable()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-## Permitir que el texto se copie al portapapeles
+## Permitir copiar el texto al portapapeles
 
-Puedes hacer que el texto sea copiable, de modo que al hacer clic en un botón junto al campo se copie el texto al portapapeles, y opcionalmente especificar un mensaje de confirmación personalizado y una duración en milisegundos:
+Puedes hacer que el texto sea copiable, de modo que al hacer clic en un botón junto al input se copie el texto al portapapeles, y opcionalmente especificar un mensaje de confirmación personalizado y duración en milisegundos:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -279,7 +251,7 @@ TextInput::make('apiKey')
     ->copyable(copyMessage: 'Copied!', copyMessageDuration: 1500)
 ```
 
-Opcionalmente, puedes pasar un valor booleano para controlar si el texto debe ser copiable o no:
+Opcionalmente, puedes pasar un booleano para controlar si el texto debe ser copiable o no:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -290,19 +262,17 @@ TextInput::make('apiKey')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir valores estáticos, los parámetros del método `copyable()` también aceptan funciones para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir valores estáticos, los parámetros de <code>copyable()</code> también aceptan funciones para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-<Aside variant="warning">
-    Esta característica solo funciona cuando SSL está habilitado en la aplicación.
-</Aside>
+:::warning
+Esta funcionalidad solo funciona cuando SSL está habilitado para la aplicación.
+:::
 
-## Enmascarado de input
+## Enmascarar inputs
 
-El enmascarado de input es la práctica de definir un formato que el valor del campo debe seguir.
+El enmascarado de inputs es la práctica de definir un formato al que el valor del input debe ajustarse.
 
 En Filament, puedes usar el método `mask()` para configurar una [máscara de Alpine.js](https://alpinejs.dev/plugins/mask#x-mask):
 
@@ -327,13 +297,11 @@ TextInput::make('cardNumber')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `mask()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>mask()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-Alpine.js enviará el valor completo enmascarado al servidor, por lo que puede que necesites eliminar ciertos caracteres del estado antes de validarlo y guardarlo. Puedes hacerlo con el método `stripCharacters()`, pasando un carácter o un array de caracteres a eliminar del valor enmascarado:
+Alpine.js enviará todo el valor enmascarado al servidor, por lo que puede que necesites eliminar ciertos caracteres del estado antes de validar y guardar. Puedes hacerlo con el método `stripCharacters()`, pasando un carácter o un array de caracteres a eliminar del valor enmascarado:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -346,15 +314,13 @@ TextInput::make('amount')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `stripCharacters()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>stripCharacters()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ## Recortar espacios en blanco
 
-Puedes recortar automáticamente los espacios en blanco del inicio y fin del valor del campo usando el método `trim()`:
+Puedes recortar automáticamente los espacios en blanco al principio y al final del valor usando el método `trim()`:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -363,7 +329,7 @@ TextInput::make('name')
     ->trim()
 ```
 
-Puede que quieras habilitar el recorte globalmente para todos los campos de texto, similar al middleware `TrimStrings` de Laravel. Puedes hacerlo en un service provider usando el método `configureUsing()`:
+Quizá quieras habilitar el recorte globalmente para todos los inputs de texto, similar al middleware `TrimStrings` de Laravel. Puedes hacerlo en un service provider usando `configureUsing()`:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -375,7 +341,7 @@ TextInput::configureUsing(function (TextInput $component): void {
 
 ## Hacer el campo de solo lectura
 
-No debe confundirse con [deshabilitar el campo](overview#disabling-a-field), puedes hacer que sea de "solo lectura" usando el método `readOnly()`:
+Sin confundirlo con [deshabilitar el campo](overview#disabling-a-field), puedes hacer el campo "solo lectura" usando `readOnly()`:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -384,13 +350,13 @@ TextInput::make('name')
     ->readOnly()
 ```
 
-Existen algunas diferencias en comparación con [`disabled()`](overview#disabling-a-field):
+Hay algunas diferencias respecto a [`disabled()`](overview#disabling-a-field):
 
-- Con `readOnly()`, el campo aún se enviará al servidor al enviar el formulario. Puede ser modificado con la consola del navegador o mediante JavaScript. Puedes usar [`dehydrated(false)`](overview#preventing-a-field-from-being-dehydrated) para evitarlo.
+- Al usar `readOnly()`, el campo seguirá enviándose al servidor cuando se envíe el formulario. Puede modificarse con la consola del navegador o vía JavaScript. Puedes usar [`dehydrated(false)`](overview#preventing-a-field-from-being-dehydrated) para evitarlo.
 - No hay cambios de estilo, como menor opacidad, al usar `readOnly()`.
-- El campo sigue siendo enfocable con `readOnly()`.
+- El campo sigue siendo enfocable al usar `readOnly()`.
 
-Opcionalmente, puedes pasar un valor booleano para controlar si el campo debe ser de solo lectura o no:
+Opcionalmente, puedes pasar un booleano para controlar si el campo debe ser de solo lectura o no:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -400,19 +366,17 @@ TextInput::make('name')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `readOnly()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>readOnly()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-## Validación en campos de texto
+## Validación del input de texto
 
-Además de todas las reglas listadas en la página de [validación](validation), existen reglas adicionales específicas para campos de texto.
+Además de todas las reglas listadas en la página de [validación](validation), hay reglas adicionales específicas para inputs de texto.
 
 ### Validación de longitud
 
-Puedes limitar la longitud del campo estableciendo los métodos `minLength()` y `maxLength()`. Estos métodos agregan validación tanto en el frontend como en el backend:
+Puedes limitar la longitud del input estableciendo los métodos `minLength()` y `maxLength()`. Estos métodos añaden validación tanto en frontend como en backend:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -422,7 +386,7 @@ TextInput::make('name')
     ->maxLength(255)
 ```
 
-También puedes especificar la longitud exacta estableciendo `length()`. Este método agrega validación tanto en el frontend como en el backend:
+También puedes especificar la longitud exacta del input estableciendo `length()`. Este método añade validación tanto en frontend como en backend:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -432,15 +396,13 @@ TextInput::make('code')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir valores estáticos, los métodos `minLength()`, `maxLength()` y `length()` también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir valores estáticos, los métodos <code>minLength()</code>, <code>maxLength()</code> y <code>length()</code> también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ### Validación de tamaño
 
-Puedes validar el valor mínimo y máximo de un campo numérico estableciendo los métodos `minValue()` y `maxValue()`:
+Puedes validar el valor mínimo y máximo de un input numérico estableciendo los métodos `minValue()` y `maxValue()`:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -452,17 +414,15 @@ TextInput::make('number')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir valores estáticos, los métodos `minValue()` y `maxValue()` también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir valores estáticos, los métodos <code>minValue()</code> y <code>maxValue()</code> también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ### Validación de número de teléfono
 
-Al usar un campo `tel()`, el valor se validará usando: `/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/`.
+Al usar un campo `tel()`, el valor se validará con: `/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/`.
 
-Si deseas cambiar eso, entonces puedes usar el método `telRegex()`:
+Si deseas cambiarlo, puedes usar el método `telRegex()`:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -472,7 +432,7 @@ TextInput::make('phone')
     ->telRegex('/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\.\/0-9]*$/')
 ```
 
-Alternativamente, para personalizar el `telRegex()` en todos los campos, usa un service provider:
+Alternativamente, para personalizar `telRegex()` en todos los campos, usa un service provider:
 
 ```php
 use Filament\Forms\Components\TextInput;
@@ -483,8 +443,6 @@ TextInput::configureUsing(function (TextInput $component): void {
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `telRegex()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>telRegex()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>

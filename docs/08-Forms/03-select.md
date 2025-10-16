@@ -4,7 +4,7 @@ title: Select
 
 ## Introducción
 
-El componente select te permite seleccionar de una lista de opciones predefinidas:
+El componente select te permite elegir de una lista de opciones predefinidas:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -18,17 +18,13 @@ Select::make('status')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un array estático, el método `options()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un array estático, el método <code>options()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-<AutoScreenshot name="forms/fields/select/simple" alt="Select" version="4.x" />
+## Habilitar el select en JavaScript
 
-## Habilitar el select JavaScript
-
-Por defecto, Filament usa el select HTML5 nativo. Puedes habilitar un select JavaScript más personalizable usando el método `native(false)`:
+Por defecto, Filament usa el select nativo de HTML5. Puedes habilitar un select en JavaScript más personalizable usando el método `native(false)`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -43,17 +39,13 @@ Select::make('status')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `native()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>native()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
-
-<AutoScreenshot name="forms/fields/select/javascript" alt="Select JavaScript" version="4.x" />
 
 ## Buscar opciones
 
-Puedes habilitar un campo de búsqueda para permitir un acceso más fácil a muchas opciones, usando el método `searchable()`:
+Puedes habilitar un input de búsqueda para facilitar el acceso a muchas opciones usando el método `searchable()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -64,7 +56,7 @@ Select::make('author_id')
     ->searchable()
 ```
 
-Opcionalmente, puedes pasar un valor booleano para controlar si el campo debe ser buscable o no:
+Opcionalmente, puedes pasar un valor booleano para controlar si el input debe ser buscable o no:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -76,23 +68,19 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `searchable()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>searchable()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-<AutoScreenshot name="forms/fields/select/searchable" alt="Select buscable" version="4.x" />
+### Devolver resultados de búsqueda personalizados
 
-### Retornar resultados de búsqueda personalizados
+Si tienes muchas opciones y quieres poblarlas en base a una búsqueda en base de datos u otra fuente externa, puedes usar los métodos `getSearchResultsUsing()` y `getOptionLabelUsing()` en lugar de `options()`.
 
-Si tienes muchas opciones y deseas poblarlas basándote en una búsqueda en base de datos u otra fuente de datos externa, puedes usar los métodos `getSearchResultsUsing()` y `getOptionLabelUsing()` en lugar de `options()`.
+El método `getSearchResultsUsing()` acepta un callback que devuelve resultados de búsqueda en formato `$key => $value`. La búsqueda del usuario actual está disponible como `$search`, y debes usarla para filtrar tus resultados.
 
-El método `getSearchResultsUsing()` acepta un callback que retorna resultados de búsqueda en formato `$key => $value`. La búsqueda actual del usuario está disponible como `$search`, y debes usarla para filtrar tus resultados.
+El método `getOptionLabelUsing()` acepta un callback que transforma la opción seleccionada `$value` en una etiqueta. Se usa cuando el formulario se carga por primera vez y el usuario aún no ha buscado. De lo contrario, no estaría disponible la etiqueta para mostrar la opción seleccionada actualmente.
 
-El método `getOptionLabelUsing()` acepta un callback que transforma el `$value` de la opción seleccionada en una etiqueta. Esto se usa cuando el formulario se carga por primera vez cuando el usuario aún no ha realizado una búsqueda. De lo contrario, la etiqueta usada para mostrar la opción actualmente seleccionada no estaría disponible.
-
-Tanto `getSearchResultsUsing()` como `getOptionLabelUsing()` deben usarse en el select si deseas proporcionar resultados de búsqueda personalizados:
+Ambos `getSearchResultsUsing()` y `getOptionLabelUsing()` deben usarse en el select si quieres proporcionar resultados de búsqueda personalizados:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -107,24 +95,16 @@ Select::make('author_id')
     ->getOptionLabelUsing(fn ($value): ?string => User::find($value)?->name),
 ```
 
-`getOptionLabelUsing()` es crucial, ya que proporciona a Filament la etiqueta de la opción seleccionada, por lo que no necesita ejecutar una búsqueda completa para encontrarla. Si una opción no es válida, debe retornar `null`.
+`getOptionLabelUsing()` es crucial, ya que proporciona a Filament la etiqueta de la opción seleccionada, por lo que no necesita ejecutar una búsqueda completa para encontrarla. Si una opción no es válida, debe devolver `null`.
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Puedes inyectar varias utilidades en estas funciones como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Valor de opción** (`mixed` `$value`) - [Solo `getOptionLabelUsing()`] El valor de la opción para recuperar la etiqueta.
-- **Valores de opciones** (`array<mixed>` `$values`) - [Solo `getOptionLabelsUsing()`] Los valores de las opciones para recuperar las etiquetas.
-- **Búsqueda** (`?string` `$search`) - [Solo `getSearchResultsUsing()`] El valor actual de entrada de búsqueda, si el campo es buscable.
-
+  <summary>Inyección de utilidades</summary>
+  Puedes inyectar varias utilidades en estas funciones como parámetros.
 </details>
 
 ### Establecer un mensaje de carga personalizado
 
-Cuando usas un select o multi-select buscable, puede que quieras mostrar un mensaje personalizado mientras las opciones se cargan. Puedes hacerlo usando el método `loadingMessage()`:
+Cuando usas un select o multi-select con búsqueda, puedes mostrar un mensaje personalizado mientras se cargan las opciones usando `loadingMessage()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -136,15 +116,13 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `loadingMessage()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>loadingMessage()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-### Establecer un mensaje personalizado cuando no hay resultados de búsqueda
+### Establecer un mensaje de "sin resultados"
 
-Cuando usas un select o multi-select buscable, puede que quieras mostrar un mensaje personalizado cuando no se encuentran resultados de búsqueda. Puedes hacerlo usando el método `noSearchResultsMessage()`:
+Cuando usas un select o multi-select con búsqueda, puedes mostrar un mensaje personalizado cuando no se encuentran resultados con `noSearchResultsMessage()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -156,15 +134,13 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `noSearchResultsMessage()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>noSearchResultsMessage()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-### Establecer un prompt de búsqueda personalizado
+### Establecer un mensaje de sugerencia de búsqueda
 
-Cuando usas un select o multi-select buscable, puede que quieras mostrar un mensaje personalizado cuando el usuario aún no ha ingresado un término de búsqueda. Puedes hacerlo usando el método `searchPrompt()`:
+Cuando usas un select o multi-select con búsqueda, puedes mostrar un mensaje personalizado cuando el usuario aún no ha introducido un término de búsqueda usando `searchPrompt()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -176,15 +152,13 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `searchPrompt()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>searchPrompt()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-### Establecer un mensaje personalizado durante la búsqueda
+### Establecer un mensaje de "buscando"
 
-Cuando usas un select o multi-select buscable, puede que quieras mostrar un mensaje personalizado mientras se cargan los resultados de búsqueda. Puedes hacerlo usando el método `searchingMessage()`:
+Cuando usas un select o multi-select con búsqueda, puedes mostrar un mensaje personalizado mientras se cargan los resultados con `searchingMessage()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -196,15 +170,13 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `searchingMessage()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>searchingMessage()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ### Ajustar el debounce de búsqueda
 
-Por defecto, Filament esperará 1000 milisegundos (1 segundo) antes de buscar opciones cuando el usuario escribe en un select o multi-select buscable. También esperará 1000 milisegundos entre búsquedas, si el usuario está escribiendo continuamente en el campo de búsqueda. Puedes cambiar esto usando el método `searchDebounce()`:
+Por defecto, Filament esperará 1000 milisegundos (1 segundo) antes de buscar opciones cuando el usuario teclee en un select o multi-select con búsqueda. También esperará 1000 ms entre búsquedas si el usuario sigue escribiendo. Puedes cambiarlo con `searchDebounce()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -215,13 +187,11 @@ Select::make('author_id')
     ->searchDebounce(500)
 ```
 
-Asegúrate de no reducir demasiado el debounce, ya que esto puede hacer que el select se vuelva lento y no responda debido a un alto número de peticiones de red para recuperar opciones del servidor.
+Asegúrate de no bajarlo demasiado, ya que puede volver el select lento e irresponsive por el alto número de solicitudes.
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `searchDebounce()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>searchDebounce()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ## Multi-select
@@ -241,7 +211,7 @@ Select::make('technologies')
     ])
 ```
 
-Opcionalmente, puedes pasar un valor booleano para controlar si el campo debe ser múltiple o no:
+Opcionalmente, puedes pasar un booleano para controlar si el input debe permitir múltiples valores o no:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -257,15 +227,11 @@ Select::make('technologies')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `multiple()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>multiple()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-<AutoScreenshot name="forms/fields/select/multiple" alt="Multi-select" version="4.x" />
-
-Estas opciones se retornan en formato JSON. Si las estás guardando usando Eloquent, debes asegurarte de agregar un [cast](https://laravel.com/docs/eloquent-mutators#array-and-json-casting) `array` a la propiedad del modelo:
+Estas opciones se devuelven en formato JSON. Si las guardas con Eloquent, asegúrate de añadir un cast `array` a la propiedad del modelo:
 
 ```php
 use Illuminate\Database\Eloquent\Model;
@@ -286,7 +252,7 @@ class App extends Model
 }
 ```
 
-Si estás [retornando resultados de búsqueda personalizados](#returning-custom-search-results), debes definir `getOptionLabelsUsing()` en lugar de `getOptionLabelUsing()`. `$values` se pasará al callback en lugar de `$value`, y debes retornar un array `$key => $value` de etiquetas y sus valores correspondientes:
+Si estás [devolviendo resultados de búsqueda personalizados](#devolver-resultados-de-búsqueda-personalizados), debes definir `getOptionLabelsUsing()` en lugar de `getOptionLabelUsing()`. Se pasará `$values` al callback en lugar de `$value`, y debes devolver un array `$key => $value` de etiquetas y sus valores correspondientes:
 
 ```php
 Select::make('technologies')
@@ -303,22 +269,16 @@ Select::make('technologies')
         ->all()),
 ```
 
-`getOptionLabelsUsing()` es crucial, ya que proporciona a Filament las etiquetas de las opciones ya seleccionadas, por lo que no necesita ejecutar una búsqueda completa para encontrarlas. También se usa para [validar](#valid-options-validation-in-rule) que las opciones que el usuario ha seleccionado son válidas. Si una opción no es válida, no debe estar presente en el array retornado por `getOptionLabelsUsing()`.
+`getOptionLabelsUsing()` es crucial, ya que proporciona a Filament las etiquetas de las opciones ya seleccionadas, por lo que no necesita ejecutar una búsqueda completa para encontrarlas. También se usa para [validar](#valid-options-validation-in-rule) que las opciones seleccionadas por el usuario sean válidas. Si una opción no es válida, no debe estar presente en el array devuelto por `getOptionLabelsUsing()`.
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-El método `getOptionLabelsUsing()` puede inyectar varias utilidades en la función como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Valores de opciones** (`array<mixed>` `$values`) - [Solo `getOptionLabelsUsing()`] Los valores de las opciones para recuperar las etiquetas.
-
+  <summary>Inyección de utilidades</summary>
+  El método <code>getOptionLabelsUsing()</code> puede inyectar varias utilidades en la función como parámetros.
 </details>
 
 ## Agrupar opciones
 
-Puedes agrupar opciones bajo una etiqueta, para organizarlas mejor. Para hacer esto, puedes pasar un array de grupos a `options()` o donde normalmente pasarías un array de opciones. Las claves del array se usan como etiquetas de grupo, y los valores son arrays de opciones en ese grupo:
+Puedes agrupar opciones bajo una etiqueta para organizarlas mejor. Para ello, puedes pasar un array de grupos a `options()` o donde normalmente pasarías un array de opciones. Las claves del array se usan como etiquetas de grupo, y los valores son arrays de opciones dentro de ese grupo:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -337,11 +297,9 @@ Select::make('status')
     ])
 ```
 
-<AutoScreenshot name="forms/fields/select/grouped" alt="Select agrupado" version="4.x" />
+## Integración con una relación de Eloquent
 
-## Integración con una relación Eloquent
-
-Puedes emplear el método `relationship()` del `Select` para configurar una relación `BelongsTo` para recuperar opciones automáticamente. El `titleAttribute` es el nombre de una columna que se usará para generar una etiqueta para cada opción:
+Puedes usar el método `relationship()` de `Select` para configurar una relación `BelongsTo` desde la que recuperar opciones automáticamente. `titleAttribute` es el nombre de la columna que se usará para generar la etiqueta de cada opción:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -350,7 +308,7 @@ Select::make('author_id')
     ->relationship(name: 'author', titleAttribute: 'name')
 ```
 
-El método `multiple()` puede usarse en combinación con `relationship()` para usar una relación `BelongsToMany`. Filament cargará las opciones de la relación, y las guardará de vuelta en la tabla pivot de la relación cuando se envíe el formulario. Si no se proporciona un `name`, Filament usará el nombre del campo como el nombre de la relación:
+El método `multiple()` puede usarse junto con `relationship()` para usar una relación `BelongsToMany`. Filament cargará las opciones de la relación y las guardará en la tabla pivote al enviar el formulario. Si no se proporciona `name`, Filament usará el nombre del campo como nombre de la relación:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -361,21 +319,21 @@ Select::make('technologies')
 ```
 
 :::warning
-    Al usar `disabled()` con `multiple()` y `relationship()`, asegúrate de que `disabled()` se llame antes de `relationship()`. Esto asegura que la llamada a `dehydrated()` desde dentro de `relationship()` no sea sobrescrita por la llamada desde `disabled()`:
+Al usar `disabled()` con `multiple()` y `relationship()`, asegúrate de llamar a `disabled()` antes que a `relationship()`. Esto garantiza que la llamada a `dehydrated()` desde `relationship()` no sea sobrescrita por la llamada desde `disabled()`:
 
-    ```php
-    use Filament\Forms\Components\Select;
+```php
+use Filament\Forms\Components\Select;
 
-    Select::make('technologies')
-        ->multiple()
-        ->disabled()
-        ->relationship(titleAttribute: 'name')
-    ```
+Select::make('technologies')
+    ->multiple()
+    ->disabled()
+    ->relationship(titleAttribute: 'name')
+```
 :::
 
-### Buscar opciones de relación en múltiples columnas
+### Buscar opciones de la relación en múltiples columnas
 
-Por defecto, si el select también es buscable, Filament retornará resultados de búsqueda para la relación basándose en la columna de título de la relación. Si deseas buscar en múltiples columnas, puedes pasar un array de columnas al método `searchable()`:
+Por defecto, si el select también es buscable, Filament devolverá resultados de la relación basados en la columna de título. Si deseas buscar en múltiples columnas, puedes pasar un array de columnas a `searchable()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -385,9 +343,9 @@ Select::make('author_id')
     ->searchable(['name', 'email'])
 ```
 
-### Precargar opciones de relación
+### Precargar opciones de la relación
 
-Si deseas poblar las opciones buscables desde la base de datos cuando se carga la página, en lugar de cuando el usuario busca, puedes usar el método `preload()`:
+Si deseas poblar las opciones buscables desde la base de datos al cargar la página, en lugar de cuando el usuario busque, puedes usar `preload()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -398,7 +356,7 @@ Select::make('author_id')
     ->preload()
 ```
 
-Opcionalmente, puedes pasar un valor booleano para controlar si el campo debe precargarse o no:
+Opcionalmente, puedes pasar un booleano para controlar si el input debe precargarse o no:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -410,17 +368,15 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `preload()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>preload()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ### Excluir el registro actual
 
-Al trabajar con relaciones recursivas, probablemente querrás eliminar el registro actual del conjunto de resultados.
+Al trabajar con relaciones recursivas, probablemente quieras eliminar el registro actual de los resultados.
 
-Esto se puede hacer fácilmente usando el argumento `ignoreRecord`:
+Esto puede hacerse fácilmente usando el argumento `ignoreRecord`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -429,9 +385,9 @@ Select::make('parent_id')
     ->relationship(name: 'parent', titleAttribute: 'name', ignoreRecord: true)
 ```
 
-### Personalizar la consulta de relación
+### Personalizar la consulta de la relación
 
-Puedes personalizar la consulta de base de datos que recupera opciones usando el tercer parámetro del método `relationship()`:
+Puedes personalizar la consulta que recupera opciones usando el tercer parámetro de `relationship()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -446,20 +402,13 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-El argumento `modifyQueryUsing` puede inyectar varias utilidades en la función como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Query** (`Illuminate\Database\Eloquent\Builder` `$query`) - El query builder de Eloquent a modificar.
-- **Búsqueda** (`?string` `$search`) - El valor actual de entrada de búsqueda, si el campo es buscable.
-
+  <summary>Inyección de utilidades</summary>
+  El argumento <code>modifyQueryUsing</code> puede inyectar varias utilidades en la función como parámetros.
 </details>
 
-### Personalizar las etiquetas de opciones de relación
+### Personalizar las etiquetas de opciones de la relación
 
-Si deseas personalizar la etiqueta de cada opción, tal vez para ser más descriptivo, o para concatenar un nombre y apellido, podrías usar una columna virtual en tu migración de base de datos:
+Si deseas personalizar la etiqueta de cada opción, por ejemplo para que sea más descriptiva o concatenar nombre y apellido, puedes usar una columna virtual en tu migración:
 
 ```php
 $table->string('full_name')->virtualAs('concat(first_name, \' \', last_name)');
@@ -472,7 +421,7 @@ Select::make('author_id')
     ->relationship(name: 'author', titleAttribute: 'full_name')
 ```
 
-Alternativamente, puedes usar el método `getOptionLabelFromRecordUsing()` para transformar el modelo Eloquent de una opción en una etiqueta:
+Alternativamente, puedes usar `getOptionLabelFromRecordUsing()` para transformar el modelo Eloquent de una opción en una etiqueta:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -489,19 +438,13 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-El método `getOptionLabelFromRecordUsing()` puede inyectar varias utilidades en la función como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Registro Eloquent** (`Illuminate\Database\Eloquent\Model` `$record`) - El registro Eloquent para obtener la etiqueta de la opción.
-
+  <summary>Inyección de utilidades</summary>
+  El método <code>getOptionLabelFromRecordUsing()</code> puede inyectar varias utilidades en la función como parámetros.
 </details>
 
-### Guardar datos pivot en la relación
+### Guardar datos pivote en la relación
 
-Si estás usando una relación `multiple()` y tu tabla pivot tiene columnas adicionales, puedes usar el método `pivotData()` para especificar los datos que deben guardarse en ellas:
+Si usas una relación `multiple()` y tu tabla pivote tiene columnas adicionales, puedes usar `pivotData()` para especificar los datos que deben guardarse en ellas:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -515,15 +458,13 @@ Select::make('primaryTechnologies')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `pivotData()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>pivotData()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ### Crear una nueva opción en un modal
 
-Puedes definir un formulario personalizado que se puede usar para crear un nuevo registro y adjuntarlo a la relación `BelongsTo`:
+Puedes definir un formulario personalizado que se usará para crear un nuevo registro y adjuntarlo a la relación `BelongsTo`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -540,25 +481,15 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `createOptionForm()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Schema** (`Filament\Schemas\Schema` `$schema`) - El objeto schema para el formulario en el modal.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>createOptionForm()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-<AutoScreenshot name="forms/fields/select/create-option" alt="Select con botón de crear opción" version="4.x" />
+El formulario se abre en un modal, donde el usuario puede rellenarlo. Al enviar el formulario, el nuevo registro es seleccionado por el campo.
 
-El formulario se abre en un modal, donde el usuario puede llenarlo con datos. Al enviar el formulario, el nuevo registro es seleccionado por el campo.
+### Personalizar la creación de nuevas opciones
 
-<AutoScreenshot name="forms/fields/select/create-option-modal" alt="Select con modal de crear opción" version="4.x" />
-
-#### Personalizar la creación de nueva opción
-
-Puedes personalizar el proceso de creación de la nueva opción definida en el formulario usando el método `createOptionUsing()`, que debe retornar la clave primaria del registro recién creado:
+Puedes personalizar el proceso de creación de la nueva opción definida en el formulario usando `createOptionUsing()`, que debe devolver la clave primaria del nuevo registro:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -574,20 +505,13 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-El método `createOptionUsing()` puede inyectar varias utilidades en la función como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Data** (`array<string, mixed>` `$data`) - Los datos del formulario en el modal.
-- **Schema** (`Filament\Schemas\Schema` `$schema`) - El objeto schema para el formulario en el modal.
-
+  <summary>Inyección de utilidades</summary>
+  El método <code>createOptionUsing()</code> puede inyectar varias utilidades en la función como parámetros.
 </details>
 
 ### Editar la opción seleccionada en un modal
 
-Puedes definir un formulario personalizado que se puede usar para editar el registro seleccionado y guardarlo de vuelta en la relación `BelongsTo`:
+Puedes definir un formulario personalizado que se usará para editar el registro seleccionado y guardarlo de nuevo en la relación `BelongsTo`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -604,25 +528,15 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `editOptionForm()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Schema** (`Filament\Schemas\Schema` `$schema`) - El objeto schema para el formulario en el modal.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>editOptionForm()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-<AutoScreenshot name="forms/fields/select/edit-option" alt="Select con botón de editar opción" version="4.x" />
+El formulario se abre en un modal, donde el usuario puede rellenarlo. Al enviar el formulario, los datos del formulario se guardan de nuevo en el registro.
 
-El formulario se abre en un modal, donde el usuario puede llenarlo con datos. Al enviar el formulario, los datos del formulario se guardan de vuelta en el registro.
+### Personalizar actualizaciones de opciones
 
-<AutoScreenshot name="forms/fields/select/edit-option-modal" alt="Select con modal de editar opción" version="4.x" />
-
-#### Personalizar actualizaciones de opciones
-
-Puedes personalizar el proceso de actualización de la opción seleccionada definida en el formulario usando el método `updateOptionUsing()`. El registro Eloquent actual que se está editando se puede recuperar usando el método `getRecord()` en el schema:
+Puedes personalizar el proceso de actualización de la opción seleccionada definida en el formulario usando `updateOptionUsing()`. El registro Eloquent actual que se está editando puede obtenerse usando `getRecord()` en el schema:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -639,22 +553,15 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-El método `updateOptionUsing()` puede inyectar varias utilidades en la función como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Data** (`array<string, mixed>` `$data`) - Los datos del formulario en el modal.
-- **Schema** (`Filament\Schemas\Schema` `$schema`) - El objeto schema para el formulario en el modal.
-
+  <summary>Inyección de utilidades</summary>
+  El método <code>updateOptionUsing()</code> puede inyectar varias utilidades en la función como parámetros.
 </details>
 
 ### Manejar relaciones `MorphTo`
 
-Las relaciones `MorphTo` son especiales, ya que le dan al usuario la capacidad de seleccionar registros de un rango de diferentes modelos. Debido a esto, tenemos un componente dedicado `MorphToSelect` que no es realmente un campo select, sino 2 campos select dentro de un fieldset. El primer campo select te permite seleccionar el tipo, y el segundo te permite seleccionar el registro de ese tipo.
+Las relaciones `MorphTo` son especiales, ya que permiten seleccionar registros de varios modelos diferentes. Por ello, tenemos un componente dedicado `MorphToSelect` que en realidad no es un campo select único, sino 2 selects dentro de un fieldset. El primer select permite elegir el tipo, y el segundo permite seleccionar el registro de ese tipo.
 
-Para usar el `MorphToSelect`, debes pasar `types()` al componente, que le indica cómo renderizar opciones para diferentes tipos:
+Para usar `MorphToSelect`, debes pasar `types()` al componente, que le indica cómo renderizar opciones para diferentes tipos:
 
 ```php
 use Filament\Forms\Components\MorphToSelect;
@@ -669,15 +576,13 @@ MorphToSelect::make('commentable')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-El método `types()` puede inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  El método <code>types()</code> puede inyectar varias utilidades en la función como parámetros.
 </details>
 
-#### Personalizar las etiquetas de opciones para cada tipo morfado
+#### Personalizar las etiquetas de opción para cada tipo morph
 
-El `titleAttribute()` se usa para extraer los títulos de cada producto o post. Si deseas personalizar la etiqueta de cada opción, puedes usar el método `getOptionLabelFromRecordUsing()` para transformar el modelo Eloquent en una etiqueta:
+`titleAttribute()` se usa para extraer los títulos de cada producto o post. Si deseas personalizar la etiqueta de cada opción, puedes usar `getOptionLabelFromRecordUsing()` para transformar el modelo Eloquent en una etiqueta:
 
 ```php
 use Filament\Forms\Components\MorphToSelect;
@@ -691,9 +596,9 @@ MorphToSelect::make('commentable')
     ])
 ```
 
-#### Personalizar la consulta de relación para cada tipo morfado
+#### Personalizar la consulta de relación para cada tipo morph
 
-Puedes personalizar la consulta de base de datos que recupera opciones usando el método `modifyOptionsQueryUsing()`:
+Puedes personalizar la consulta que recupera opciones usando `modifyOptionsQueryUsing()`:
 
 ```php
 use Filament\Forms\Components\MorphToSelect;
@@ -711,23 +616,17 @@ MorphToSelect::make('commentable')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-El método `modifyOptionsQueryUsing()` puede inyectar varias utilidades en la función como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Query builder de Eloquent** (`Illuminate\Database\Eloquent\Builder` `$query`) - El query builder a modificar.
-
+  <summary>Inyección de utilidades</summary>
+  El método <code>modifyOptionsQueryUsing()</code> puede inyectar varias utilidades en la función como parámetros.
 </details>
 
 :::tip
-Muchas de las mismas opciones en el campo select están disponibles para `MorphToSelect`, incluyendo `searchable()`, `preload()`, `native()`, `allowHtml()`, y `optionsLimit()`.
+Muchas de las mismas opciones del campo select están disponibles para `MorphToSelect`, incluyendo `searchable()`, `preload()`, `native()`, `allowHtml()` y `optionsLimit()`.
 :::
 
-#### Personalizar los campos select morph
+#### Personalizar los selects del morph
 
-Puedes personalizar aún más el campo select "key" para un tipo morph específico usando el método `modifyKeySelectUsing()`:
+Puedes personalizar aún más el select de "clave" para un tipo morph específico usando `modifyKeySelectUsing()`:
 
 ```php
 use Filament\Forms\Components\MorphToSelect;
@@ -751,7 +650,7 @@ MorphToSelect::make('commentable')
     ])
 ```
 
-Esto es útil si deseas personalizar el campo select "key" para cada tipo morfado individualmente. Si deseas personalizar el select key para todos los tipos, puedes usar el método `modifyKeySelectUsing()` en el componente `MorphToSelect` mismo:
+Esto es útil si quieres personalizar el select de "clave" para cada tipo morph individualmente. Si quieres personalizar la clave para todos los tipos, puedes usar `modifyKeySelectUsing()` en el propio componente `MorphToSelect`:
 
 ```php
 use Filament\Forms\Components\MorphToSelect;
@@ -767,7 +666,7 @@ MorphToSelect::make('commentable')
     ->modifyKeySelectUsing(fn (Select $select): Select => $select->native())
 ```
 
-También puedes modificar el campo select "type" usando el método `modifyTypeSelectUsing()`:
+También puedes modificar el select de "tipo" usando `modifyTypeSelectUsing()`:
 
 ```php
 use Filament\Forms\Components\MorphToSelect;
@@ -783,9 +682,9 @@ MorphToSelect::make('commentable')
     ->modifyTypeSelectUsing(fn (Select $select): Select => $select->native())
 ```
 
-## Permitir HTML en las etiquetas de opciones
+## Permitir HTML en las etiquetas de opción
 
-Por defecto, Filament escapará cualquier HTML en las etiquetas de opciones. Si deseas permitir HTML, puedes usar el método `allowHtml()`:
+Por defecto, Filament escapará cualquier HTML en las etiquetas de opción. Si deseas permitir HTML, puedes usar `allowHtml()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -802,10 +701,10 @@ Select::make('technology')
 ```
 
 :::danger
-    Ten en cuenta que deberás asegurarte de que el HTML sea seguro para renderizar, de lo contrario tu aplicación será vulnerable a ataques XSS.
+Debes asegurarte de que el HTML sea seguro de renderizar; de lo contrario, tu aplicación será vulnerable a ataques XSS.
 :::
 
-Opcionalmente, puedes pasar un valor booleano para controlar si el campo debe permitir HTML o no:
+Opcionalmente, puedes pasar un booleano para controlar si el input debe permitir HTML o no:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -822,15 +721,13 @@ Select::make('technology')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `allowHtml()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>allowHtml()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-## Envolver o truncar etiquetas de opciones
+## Ajustar o truncar etiquetas de opción
 
-Cuando usas el select JavaScript, las etiquetas que exceden el ancho del elemento select se envolverán en múltiples líneas por defecto. Alternativamente, puedes elegir truncar las etiquetas desbordantes.
+Cuando usas el select en JavaScript, las etiquetas que exceden el ancho del elemento se ajustan en varias líneas por defecto. Alternativamente, puedes truncar las etiquetas desbordadas.
 
 ```php
 use Filament\Forms\Components\Select;
@@ -840,15 +737,13 @@ Select::make('truncate')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `wrapOptionLabels()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>wrapOptionLabels()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ## Deshabilitar la selección del placeholder
 
-Puedes evitar que el placeholder (opción null) sea seleccionado usando el método `selectablePlaceholder(false)`:
+Puedes evitar que el placeholder (opción nula) sea seleccionable usando `selectablePlaceholder(false)`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -864,15 +759,13 @@ Select::make('status')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `selectablePlaceholder()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>selectablePlaceholder()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ## Deshabilitar opciones específicas
 
-Puedes deshabilitar opciones específicas usando el método `disableOptionWhen()`. Acepta un closure, en el cual puedes verificar si la opción con un `$value` específico debe estar deshabilitada:
+Puedes deshabilitar opciones específicas usando `disableOptionWhen()`. Acepta un closure en el que puedes comprobar si la opción con un `$value` concreto debe deshabilitarse:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -888,20 +781,13 @@ Select::make('status')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Puedes inyectar varias utilidades en la función como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Valor de opción** (`mixed` `$value`) - El valor de la opción a deshabilitar.
-- **Etiqueta de opción** (`string | Illuminate\Contracts\Support\Htmlable` `$label`) - La etiqueta de la opción a deshabilitar.
-
+  <summary>Inyección de utilidades</summary>
+  Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-## Añadir texto como prefijo o sufijo
+## Añadir texto de prefijo/sufijo junto al campo
 
-Puedes colocar texto antes y después del campo usando los métodos `prefix()` y `suffix()`:
+Puedes colocar texto antes y después del input usando `prefix()` y `suffix()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -912,17 +798,13 @@ Select::make('domain')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir valores estáticos, los métodos `prefix()` y `suffix()` también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir valores estáticos, los métodos <code>prefix()</code> y <code>suffix()</code> también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-<AutoScreenshot name="forms/fields/select/affix" alt="Select con prefijos y sufijos" version="4.x" />
+### Usar iconos como prefijos/sufijos
 
-### Usar iconos como prefijos o sufijos
-
-Puedes colocar un [icono](../styling/icons) antes y después del campo usando los métodos `prefixIcon()` y `suffixIcon()`:
+Puedes colocar un [icono](../styling/icons) antes y después del input usando `prefixIcon()` y `suffixIcon()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -933,17 +815,13 @@ Select::make('domain')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir valores estáticos, los métodos `prefixIcon()` y `suffixIcon()` también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir valores estáticos, los métodos <code>prefixIcon()</code> y <code>suffixIcon()</code> también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
-
-<AutoScreenshot name="forms/fields/select/suffix-icon" alt="Select con icono como sufijo" version="4.x" />
 
 #### Establecer el color del icono de prefijo/sufijo
 
-Los iconos de prefijo y sufijo son grises por defecto, pero puedes establecer un color diferente usando los métodos `prefixIconColor()` y `suffixIconColor()`:
+Los iconos de prefijo/sufijo son grises por defecto, pero puedes establecer otro color usando `prefixIconColor()` y `suffixIconColor()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -955,15 +833,13 @@ Select::make('domain')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir valores estáticos, los métodos `prefixIconColor()` y `suffixIconColor()` también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir valores estáticos, los métodos <code>prefixIconColor()</code> y <code>suffixIconColor()</code> también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ## Limitar el número de opciones
 
-Puedes limitar el número de opciones que se muestran en un select o multi-select buscable usando el método `optionsLimit()`. El valor predeterminado es 50:
+Puedes limitar el número de opciones que se muestran en un select o multi-select con búsqueda usando `optionsLimit()`. El valor por defecto es 50:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -974,18 +850,16 @@ Select::make('author_id')
     ->optionsLimit(20)
 ```
 
-Asegúrate de no aumentar demasiado el límite, ya que esto puede hacer que el select se vuelva lento y no responda debido al alto uso de memoria en el navegador.
+Asegúrate de no subir el límite demasiado, ya que puede volver el select lento y poco responsivo por el alto uso de memoria en el navegador.
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir un valor estático, el método `optionsLimit()` también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir un valor estático, el método <code>optionsLimit()</code> también acepta una función para calcularlo dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
 ## Opciones booleanas
 
-Si deseas un select booleano simple, con opciones "Yes" y "No", puedes usar el método `boolean()`:
+Si quieres un select booleano simple, con opciones "Yes" y "No", puedes usar `boolean()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -995,7 +869,7 @@ Select::make('feedback')
     ->boolean()
 ```
 
-Para personalizar la etiqueta "Yes", puedes usar el argumento `trueLabel` en el método `boolean()`:
+Para personalizar la etiqueta de "Yes", puedes usar el argumento `trueLabel` en `boolean()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -1005,7 +879,7 @@ Select::make('feedback')
     ->boolean(trueLabel: 'Absolutely!')
 ```
 
-Para personalizar la etiqueta "No", puedes usar el argumento `falseLabel` en el método `boolean()`:
+Para personalizar la etiqueta de "No", puedes usar el argumento `falseLabel` en `boolean()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -1015,7 +889,7 @@ Select::make('feedback')
     ->boolean(falseLabel: 'Not at all!')
 ```
 
-Para personalizar el placeholder que se muestra cuando aún no se ha seleccionado una opción, puedes usar el argumento `placeholder` en el método `boolean()`:
+Para personalizar el placeholder que se muestra cuando aún no se ha seleccionado una opción, puedes usar el argumento `placeholder` en `boolean()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -1025,11 +899,11 @@ Select::make('feedback')
     ->boolean(placeholder: 'Make your mind up...')
 ```
 
-## Seleccionar opciones de una tabla en un modal
+## Seleccionar opciones desde una tabla en un modal
 
-Puedes usar el componente `ModalTableSelect` para abrir una [tabla](../tables) de Filament en un modal, permitiendo a los usuarios seleccionar registros de ella. Esto es útil cuando tienes una [relación](#integrating-with-an-eloquent-relationship) que tiene muchos registros, y deseas que los usuarios puedan realizar filtrado y búsqueda avanzados a través de ellos.
+Puedes usar el componente `ModalTableSelect` para abrir una [tabla](../tables) de Filament en un modal, permitiendo a los usuarios seleccionar registros de ella. Esto es útil cuando tienes una [relación](#integración-con-una-relación-de-eloquent) con muchos registros y quieres permitir filtrado y búsqueda avanzados.
 
-Para usar el `ModalTableSelect`, debes tener una clase de configuración de tabla para el modelo. Puedes generar una de estas clases usando el comando `make:filament-table`:
+Para usar `ModalTableSelect`, debes tener una clase de configuración de tabla para el modelo. Puedes generar una usando el comando `make:filament-table`:
 
 ```php
 use Filament\Tables\Columns\TextColumn;
@@ -1057,7 +931,7 @@ class CategoriesTable
 }
 ```
 
-La clase debe tener un método `configure()` que acepte el objeto `Table` y lo retorne. El nombre de la clase debe pasarse al método `tableConfiguration()` del componente `ModalTableSelect`:
+La clase debe tener un método `configure()` que acepte el objeto `Table` y lo devuelva. El nombre de la clase debe pasarse al método `tableConfiguration()` del componente `ModalTableSelect`:
 
 ```php
 use Filament\Forms\Components\ModalTableSelect;
@@ -1079,15 +953,13 @@ ModalTableSelect::make('categories')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-El método `tableConfiguration()` puede inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  El método <code>tableConfiguration()</code> puede inyectar varias utilidades en la función como parámetros.
 </details>
 
 ### Personalizar las acciones del modal table select
 
-Puedes personalizar el botón "Select" y el modal usando los métodos de configuración del objeto [action](../actions). Pasar una función al método `selectAction()` te permite modificar el objeto `$action`, por ejemplo, para cambiar la etiqueta del botón y el encabezado del modal:
+Puedes personalizar el botón "Select" y el modal usando los métodos de configuración de [acciones](../actions). Pasar una función a `selectAction()` te permite modificar el objeto `$action`, por ejemplo, para cambiar la etiqueta del botón y el encabezado del modal:
 
 ```php
 use Filament\Actions\Action;
@@ -1105,19 +977,13 @@ ModalTableSelect::make('category_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-El método `selectAction()` puede inyectar varias utilidades en la función como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Action** (`Filament\Actions\Action` `$action`) - El objeto action a personalizar.
-
+  <summary>Inyección de utilidades</summary>
+  El método <code>selectAction()</code> puede inyectar varias utilidades en la función como parámetros.
 </details>
 
-### Personalizar las etiquetas de opciones en el modal table select
+### Personalizar las etiquetas de opción en el modal table select
 
-El método `getOptionLabelFromRecordUsing()` se puede usar para personalizar la etiqueta de cada opción seleccionada. Esto es útil si deseas mostrar una etiqueta más descriptiva o concatenar dos columnas juntas:
+El método `getOptionLabelFromRecordUsing()` puede usarse para personalizar la etiqueta de cada opción seleccionada. Es útil si quieres mostrar una etiqueta más descriptiva o concatenar dos columnas:
 
 ```php
 use Filament\Forms\Components\ModalTableSelect;
@@ -1128,9 +994,9 @@ ModalTableSelect::make('category_id')
     ->getOptionLabelFromRecordUsing(fn (Category $record): string => "{$record->name} ({$record->slug})")
 ```
 
-### Pasar argumentos adicionales a la tabla en un modal select
+### Pasar argumentos adicionales a la tabla del modal select
 
-Puedes pasar argumentos desde tu formulario a la clase de configuración de tabla usando el método `tableArguments()`. Por ejemplo, esto se puede usar para modificar la consulta de la tabla basándose en campos de formulario previamente llenados:
+Puedes pasar argumentos desde tu formulario a la clase de configuración de la tabla usando `tableArguments()`. Por ejemplo, puedes modificar la consulta de la tabla en base a campos llenados previamente:
 
 ```php
 use Filament\Actions\Action;
@@ -1150,13 +1016,11 @@ ModalTableSelect::make('products')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-El método `tableArguments()` puede inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  El método <code>tableArguments()</code> puede inyectar varias utilidades en la función como parámetros.
 </details>
 
-En tu clase de configuración de tabla, puedes acceder a estos argumentos usando el método `$table->getArguments()`:
+En tu clase de configuración de tabla, puedes acceder a estos argumentos usando `$table->getArguments()`:
 
 ```php
 use Filament\Forms\Components\TableSelect\Livewire\TableSelectLivewireComponent;
@@ -1193,21 +1057,21 @@ class ProductsTable
 }
 ```
 
-## Validación en Select
+## Validación del select
 
-Además de todas las reglas listadas en la página de [validación](validation), existen reglas adicionales específicas para selects.
+Además de todas las reglas listadas en la página de [validación](validation), hay reglas adicionales específicas de los selects.
 
 ### Validación de opciones válidas (regla `in()`)
 
-La regla [`in()`](validation#in) asegura que los usuarios no puedan seleccionar una opción que no esté en la lista de opciones. Esta es una regla importante para propósitos de integridad de datos, por lo que Filament la aplica por defecto a todos los campos select.
+La regla [`in()`](validation#in) asegura que los usuarios no puedan seleccionar una opción que no esté en la lista de opciones. Es una regla importante para la integridad de datos, por lo que Filament la aplica por defecto a todos los campos select.
 
 :::warning
-    La validación de opciones seleccionadas es crucial, por lo que sugerimos fuertemente que [escribas pruebas automatizadas](../testing/testing-schemas#testing-form-validation) para tus formularios para asegurar que la validación funcione como se espera.
+La validación de la opción seleccionada es crucial, por lo que recomendamos encarecidamente que [escribas tests automatizados](../testing/testing-schemas#testing-form-validation) para tus formularios y asegurar que la validación funciona como se espera.
 :::
 
-Dado que hay muchas formas para que un campo select poblar sus opciones, y en muchos casos las opciones no se cargan todas en el select por defecto y requieren búsqueda para recuperarlas, Filament usa la presencia de una "etiqueta de opción" válida para determinar si el valor seleccionado existe. También verifica si esa opción está [deshabilitada](#disabling-specific-options) o no.
+Dado que hay muchas formas para que un select pueble sus opciones, y en muchos casos las opciones no se cargan todas por defecto y requieren búsqueda, Filament usa la presencia de una "etiqueta de opción" válida para determinar si el valor seleccionado existe. También comprueba si esa opción está [deshabilitada](#deshabilitar-opciones-específicas) o no.
 
-Si estás usando una consulta de búsqueda personalizada para recuperar opciones, debes asegurarte de que el método `getOptionLabelUsing()` esté definido, para que Filament pueda validar el valor seleccionado contra las opciones disponibles:
+Si estás usando una búsqueda personalizada para recuperar opciones, debes asegurarte de definir `getOptionLabelUsing()`, para que Filament pueda validar el valor seleccionado frente a las opciones disponibles:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -1222,9 +1086,9 @@ Select::make('author_id')
     ->getOptionLabelUsing(fn (string $value): ?string => Author::find($value)?->name),
 ```
 
-El método `getOptionLabelUsing()` debe retornar `null` si la opción no es válida, para permitir que Filament determine que el valor seleccionado no está en la lista de opciones. Si la opción es válida, debe retornar la etiqueta de la opción.
+El método `getOptionLabelUsing()` debe devolver `null` si la opción no es válida, para permitir a Filament determinar que el valor seleccionado no está en la lista de opciones. Si la opción es válida, debe devolver la etiqueta de la opción.
 
-Si estás usando un select `multiple()` o multi-select, debes definir `getOptionLabelsUsing()` en lugar de `getOptionLabelUsing()`. `$values` se pasará al callback en lugar de `$value`, y debes retornar un array `$key => $value` de etiquetas y sus valores correspondientes:
+Si usas un select `multiple()` o multi-select, debes definir `getOptionLabelsUsing()` en lugar de `getOptionLabelUsing()`. Se pasará `$values` al callback en lugar de `$value`, y debes devolver un array `$key => $value` de etiquetas y sus valores correspondientes:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -1243,11 +1107,11 @@ Select::make('technologies')
         ->all()),
 ```
 
-Si estás usando el método `relationship()`, los métodos `getOptionLabelUsing()` o `getOptionLabelsUsing()` se definirán automáticamente para ti, por lo que no necesitas preocuparte por ellos.
+Si usas el método `relationship()`, los métodos `getOptionLabelUsing()` o `getOptionLabelsUsing()` se definirán automáticamente por ti, por lo que no necesitas preocuparte por ellos.
 
 ### Validación del número de elementos seleccionados
 
-Puedes validar el número mínimo y máximo de elementos que puedes seleccionar en un [multi-select](#multi-select) estableciendo los métodos `minItems()` y `maxItems()`:
+Puedes validar el número mínimo y máximo de elementos seleccionables en un [multi-select](#multi-select) con los métodos `minItems()` y `maxItems()`:
 
 ```php
 use Filament\Forms\Components\Select;
@@ -1265,19 +1129,17 @@ Select::make('technologies')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Además de permitir valores estáticos, los métodos `minItems()` y `maxItems()` también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
-
+  <summary>Inyección de utilidades</summary>
+  Además de permitir valores estáticos, los métodos <code>minItems()</code> y <code>maxItems()</code> también aceptan una función para calcularlos dinámicamente. Puedes inyectar varias utilidades en la función como parámetros.
 </details>
 
-## Personalizar los objetos action del select
+## Personalizar los objetos de acción del select
 
-Este campo usa objetos action para una fácil personalización de los botones dentro de él. Puedes personalizar estos botones pasando una función a un método de registro de action. La función tiene acceso al objeto `$action`, que puedes usar para [personalizarlo](../actions/overview) o [personalizar su modal](../actions/modals). Los siguientes métodos están disponibles para personalizar las acciones:
+Este campo usa objetos de acción para facilitar la personalización de los botones dentro de él. Puedes personalizar estos botones pasando una función a un método de registro de acciones. La función tiene acceso al objeto `$action`, que puedes usar para [personalizarlo](../actions/overview) o [personalizar su modal](../actions/modals). Los siguientes métodos están disponibles para personalizar las acciones:
 
 - `createOptionAction()`
 - `editOptionAction()`
-- `manageOptionActions()` (para personalizar tanto la acción de crear como la de editar opción a la vez)
+- `manageOptionActions()` (para personalizar las acciones de crear y editar a la vez)
 
 Aquí hay un ejemplo de cómo podrías personalizar una acción:
 
@@ -1293,12 +1155,6 @@ Select::make('author_id')
 ```
 
 <details>
-<summary>Inyección de utilidades</summary>
-
-Los métodos de registro de acciones pueden inyectar varias utilidades en la función como parámetros.
-
-**Parámetros adicionales disponibles:**
-
-- **Action** (`Filament\Actions\Action` `$action`) - El objeto action a personalizar.
-
+  <summary>Inyección de utilidades</summary>
+  Los métodos de registro de acciones pueden inyectar varias utilidades en la función como parámetros.
 </details>
