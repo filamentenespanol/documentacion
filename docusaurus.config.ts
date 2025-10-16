@@ -26,9 +26,11 @@ const config: Config = {
   projectName: "documentacion", // Usually your repo name.
 
   onBrokenLinks: "warn",
+  
   markdown: {
     hooks: {
       onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownImages: 'warn'
     },
   },
 

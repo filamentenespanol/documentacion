@@ -19,7 +19,7 @@
     "@docusaurus/preset-classic": "3.9.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
-    "prism-blade": "^0.0.9",
+    "prism-blade": "^0.0.10",
     "prism-react-renderer": "^2.3.0",
     "prismjs": "^1.30.0",
     "react": "^19.0.0",
@@ -30,9 +30,11 @@
     "@docusaurus/module-type-aliases": "3.9.1",
     "@docusaurus/tsconfig": "3.9.1",
     "@docusaurus/types": "3.9.1",
+    "@types/node": "^24.7.2",
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
-    "typescript": "~5.6.2"
+    "typescript": "~5.6.2",
+    "utility-types": "^3.11.0"
   },
   "browserslist": {
     "production": [
