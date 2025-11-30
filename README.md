@@ -42,7 +42,7 @@ Este proyecto está en progreso y estos son algunos de los objetivos en los que 
 
 | Objetivo                              | Progreso | Estado Actual                         |
 |---------------------------------------|:--------:|---------------------------------------|
-| Traducción contenido v4               |   25%    | Secciones base traducidas             |
+| Traducción contenido v4               |   68%    | Secciones base traducidas             |
 | Verificación de enlaces               |   10%    | Pendiente revisión completa           |
 | Revisión técnica (exactitud)          |   15%    | Validar ejemplos y snippets           |
 | Glosario y términos consistentes      |   20%    | Definir términos clave de Filament    |
