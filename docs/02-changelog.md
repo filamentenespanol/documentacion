@@ -8,6 +8,214 @@ Este archivo contiene la **traducción no oficial** de los cambios publicados en
 
 ---
 
+## [v4.3.0] - 05 Dic 2025
+
+### ✨ Cambios
+- Corrección: Permitir que `getOptionDescriptionFromRecord` devuelva `null`.
+- Restricciones relativas de fecha y fecha-hora para el query builder.
+- Corrección: La opción `shouldRegisterNavigation` ahora se respeta correctamente en los clusters.
+- Editor enriquecido: herramienta para alternar la celda de encabezado de tabla y su icono.
+- Funcionalidad: inyectar `$repeaterIndex` en closures evaluadas.
+- Posibilidad de usar `TableSelect` en acciones de adjuntar (`attach action`).
+- Editor enriquecido: modificador `hiddenLabel()` para mostrar etiquetas de herramientas.
+- Mejora: ajuste de líneas (wrapping) en el editor de código.
+- Posibilidad de definir una lista de protocolos de enlace permitidos.
+- Nueva experiencia de usuario para la navegación con pestañas horizontales.
+- Posición configurable del botón de reseteo para filtros de tabla y gestor de columnas.
+- [4.x] Evaluación de closures en `TimezoneManager`.
+- [v4] Nueva API `headerTooltip()` para columnas de tabla.
+- [4.x] Soporte de alineación vertical en `Repeater\TableColumn`.
+- Traducciones completas al persa (fa).
+- Nueva API `persistColumnsInSession()` para persistir columnas en sesión.
+- Exponer el recuento de registros de la tabla.
+- Corrección: teletransporte de grupos en la topbar.
+- Reañadida la posibilidad de desactivar notificaciones.
+- Funcionalidad: componente `Select` ahora soporta ordenación (sortable).
+- Corrección: salto de maquetación del logo de la topbar cuando la sidebar es colapsable.
+
+**Contribuidores nuevos:** @felipeArnold, @pochocho, @nnivxix, @freshleafmedia, @MeghdadFadaee, @Zamion101, @danielh-official
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.3.0)
+
+---
+
+## [v4.2.4] - 28 Nov 2025
+
+### ✨ Cambios
+- Corrección: Permitir que `getOptionDescriptionFromRecord` devuelva `null`.
+- Restricciones relativas de fecha y fecha-hora para el query builder.
+- Corrección: La opción `shouldRegisterNavigation` ahora se respeta correctamente en los clusters.
+- Editor enriquecido: herramienta para alternar la celda de encabezado de tabla y su icono.
+- Funcionalidad: inyectar `$repeaterIndex` en closures evaluadas.
+- Posibilidad de usar `TableSelect` en acciones de adjuntar (`attach action`).
+- Editor enriquecido: modificador `hiddenLabel()` para mostrar etiquetas de herramientas.
+- Mejora: ajuste de líneas (wrapping) en el editor de código.
+- Posibilidad de definir una lista de protocolos de enlace permitidos.
+- Nueva experiencia de usuario para la navegación con pestañas horizontales.
+- Posición configurable del botón de reseteo para filtros de tabla y gestor de columnas.
+- [4.x] Evaluación de closures en `TimezoneManager`.
+- [v4] Nueva API `headerTooltip()` para columnas de tabla.
+- [4.x] Soporte de alineación vertical en `Repeater\TableColumn`.
+- Traducciones completas al persa (fa).
+- Nueva API `persistColumnsInSession()` para persistir columnas en sesión.
+- Exponer el recuento de registros de la tabla.
+- Corrección: teletransporte de grupos en la topbar.
+- Reañadida la posibilidad de desactivar notificaciones.
+- Funcionalidad: componente `Select` ahora soporta ordenación (sortable).
+- Corrección: salto de maquetación del logo de la topbar cuando la sidebar es colapsable.
+
+**Contribuidores nuevos:** @johankrijt, @HichemTab-tech, @lucacastelnuovo, @hans-thomas, @giacomomasseron, @thomasLecler, @osbre, @nathanheffley
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.2.4)
+
+---
+
+## [v4.2.3] - 20 Nov 2025
+
+### ✨ Cambios
+- Corrección: Traducciones en jemer (Khmer).
+- Corrección: Colores de gráficos al cambiar de tema.
+- Actualización: Dependencia `js-yaml` a `4.1.1` en assets de screenshots de la documentación.
+- [4.x] Soporte para `hiddenOn` y `visibleOn` en resúmenes de tabla (summarizers).
+- Asegurar que el tipo MIME real se envíe como cabecera por defecto.
+- Documentación: corregido el ejemplo de `$isLazy` en la sección de carga diferida de widgets.
+- Corrección: soporte de iconos `Htmlable`.
+- Corrección: se elimina `toLowerCase` en la query de `handleSearch` en `select.js`.
+- Documentación: varios typos corregidos.
+- Documentación: añadido apartado "Publishing configuration" al manual de instalación.
+- Actualización de la dependencia `pragmarx/google2fa` a `^9.0`.
+- [v4] Corrección: acción de exportación fuera del contexto de tabla.
+
+**Contribuidores nuevos:** @angkosal, @dxnter, @pddevins, @mechelon
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.2.3)
+
+---
+
+## [v4.2.2] - 14 Nov 2025
+
+### ✨ Cambios
+- Actualización: variable de entorno para el disco por defecto en la documentación / ejemplo.
+- Corrección: evitar que el checkbox se "aplaste" cuando la etiqueta ocupa varias líneas.
+- Corrección: `QueryBuilder` sin cláusula `from`.
+- Corrección: al mover el `builder` hacia atrás se descolocaba el botón central de añadir.
+- Se vuelve a añadir soporte para iconos `Htmlable`.
+- Corrección: el menú de usuario se puede desplegar con teclado.
+- Corrección: búsqueda y ordenación sobre la misma relación en tablas.
+- Mejora: uso de CPU al desactivar botones de la toolbar.
+
+**Contribuidores nuevos:** @chaseconey, @jobara
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.2.2)
+
+---
+
+## [v4.2.1] - 11 Nov 2025
+
+### ✨ Cambios
+- No mostrar el gestor de columnas cuando no hay columnas ni grupos de columnas.
+- Permitir `pragmarx/google2fa` ^9.0.
+- Corrección: deprecación en `ExportCsv`.
+- Añadidas traducciones SK/CZ faltantes.
+- Añadidas traducciones japonesas faltantes.
+- Corrección: `Repeater::persistCollapsed()`.
+- Manejo seguro de notificaciones `null` (failsafe) al obtener notificaciones.
+- i18n: actualización de traducciones al serbio.
+- Actualización de traducciones vietnamitas en `packages/forms`.
+- Implementar scroll hasta la etiqueta seleccionada en sugerencias de merge tags.
+- Corrección: relación de aspecto de altura de gráficos fijada en 1.5 en todos los tipos de gráfico.
+- Corrección de typo en callback de `createAnotherAction`.
+- Corrección: polling y reordenación en el gestor de columnas.
+- [4.x] Mejora de utilidad `$get`.
+- [4.x] Nuevo método `extraRecordLinkAttributes()` para personalizar enlaces a registros.
+- Funcionalidad: permitir incluir sólo las columnas visibles de la tabla en exportaciones.
+- Soporte de enums en exportaciones.
+- [4.x] Soporte de casos de enum en parámetros de reglas de validación.
+- Añadida traducción ucraniana faltante.
+- [v4 Docs] Actualizado el namespace en el primer ejemplo de la página de overview de esquemas.
+- [4.x] Añadidas Boost Guidelines.
+- Actualización de la etiqueta de paginación en las traducciones japonesas.
+- Optimización: early returns en métodos con `ExposedLivewireMethod` en `BaseFileUpload`.
+- Corrección: altura de widgets de estadísticas.
+
+**Contribuidores nuevos:** @ukeloop, @vasi-rus, @hoangnamitc, @nijholt, @leek, @jovialcore
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.2.1)
+
+---
+
+## [v4.2.0] - 02 Nov 2025
+
+### ✨ Cambios
+- Nuevo paquete: `filament/query-builder`.
+- Traducciones al holandés para herramientas de grid.
+- Ocultar el botón de adjuntar archivos en la toolbar cuando los adjuntos están deshabilitados.
+- Evitar errores de referencia `null` cuando los atajos de teclado se disparan tras eliminar un elemento.
+- Soporte para enum `TextSize` según la documentación.
+- Añadida propiedad CSS `scrollbar-gutter` a la clase `fi`.
+- Mejora de traducciones `lus`.
+- Documentación: aclarar uso de Tailwind CSS en la documentación de plugins.
+- Corrección de estilos de ítems en dropdown.
+- Incluir locale `lus` en `file-upload.js`.
+- Corrección: deprecación en `CreateXlsxFile`.
+- Corrección: deprecación en `Writer::createFromFileObject`.
+- Documentación: añadir `viewData()` para componentes personalizados.
+- Corrección: error `Could not find Livewire component in DOM tree` en rich editor añadiendo método `destroy()`.
+- Documentación: tipo de componente en documentación de tests de esquema.
+- Corrección: bucle infinito cuando varios `$get()` leen estado de componentes inexistentes al calcular esquemas hijos dinámicos.
+- Mejora: reenfoque de campos de formulario.
+- [4.x] Mejora: separadores de miles en los números de paginación.
+- Documentación: enlace corregido a la página de pruebas de esquemas.
+- Mejora visual: orden de fusión de herramientas en el editor.
+- Corrección: fondo inconsistente en grupos fusionados.
+- [v4] Documentación: enlaces a interfaces de color e icono en enums corregidos.
+- Refactor: manejo del esquema de widgets en `Page.php`.
+- [4.x] Eliminado `wire:ignore` de la subnavegación de la sidebar.
+- Añadida clase CSS para notificaciones leídas.
+- Corrección: estado activo en herramientas de encabezado del rich editor por defecto.
+- Mejora: mayor separación visual para cabeceras de grupos en selects.
+- Corrección: claves heredables en `Repeater`.
+- Corrección: valores duplicados `int` al seleccionar todos los elementos de una `CheckboxList`.
+
+**Contribuidores nuevos:** @aqjw, @rohanAdhikari1
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.2.0)
+
+---
+
+## [v4.1.10] - 21 Oct 2025
+
+### ✨ Cambios
+- Corrección de problema RTL en el código de un solo uso (one time code).
+- Posibilidad de renderizar `ActionGroup::buttonGroup` con acciones/grupos combinados.
+- Añadidas traducciones eslovenas para el paquete de soporte.
+- Corrección: tipos incompatibles para el logo de marca.
+- Actualizar `defaultSortKey` para ordenar en la misma dirección que la columna principal.
+- Refactor: actualizar archivos de idioma bengalí para mayor consistencia.
+- Pruebas: importar la fachada `Event` usada en el test "can save".
+- Actualización de traducciones en `fa/infolist.php`.
+- Funcionalidad: ocultar título en el encabezado (`header hide title`).
+- Corrección: espaciado y visibilidad de acciones intermedias en `Builder`.
+- Corrección: rellenar el estado por defecto en formularios de bloques personalizados del rich editor.
+- Actualización de traducciones al español.
+- Documentación: corregida la documentación de `$get()` en repetidores.
+- Corrección: alinear badges de texto con alineación media para un mejor layout.
+- Añadida traducción holandesa para `uploading_file_message`.
+- Permitir activar/desactivar subida de archivos en `RichEditor` y `MarkdownEditor` mediante `->fileAttachments(...)`.
+- Corrección: evaluación de `hint`.
+- Documentación: enlaces rotos y desactualizados corregidos.
+- Dependencias: actualización de `vite` de 6.3.6 a 6.4.1 en `docs-assets/app`.
+- Añadidas traducciones holandesas faltantes para validaciones de subida de archivos.
+- Añadido tipo de retorno booleano en traducciones persas.
+- Soporte para arrays de patrones de rutas en ítems de navegación.
+- Corrección: acciones de sección de relaciones.
+
+**Contribuidores nuevos:** @derpoho, @natecarlson, @imhayatunnabi, @matt-h, @pankajXdev
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.1.10)
+
+---
+
 ## [v4.1.9] - 15 Oct 2025
 
 ### ✨ Cambios
