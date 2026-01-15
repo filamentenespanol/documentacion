@@ -8,6 +8,121 @@ Este archivo contiene la **traducción no oficial** de los cambios publicados en
 
 ---
 
+## [v4.5.2] - 07 Ene 2026
+
+### 🐛 Correcciones
+
+* [4.x] Corrección: gestión del estado `Htmlable` en `TextEntry` y `TextColumn`.
+* Correcciones en `MorphToSelect`, limpieza de selección, tooltips RawJs y configuración de importaciones.
+* Corrección: generación incorrecta de colores acromáticos en `generatePalette`.
+
+**Contribuidores nuevos:** @SimonBroekaert, @arthurpar06
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.5.2)
+
+---
+
+## [v4.5.1] - 05 Ene 2026
+
+### 🐛 Correcciones
+
+* Corrección: mensaje "sin opciones" en `Select` cuando se usan opciones dinámicas iniciales.
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.5.1)
+
+---
+
+## [v4.5.0] - 03 Ene 2026
+
+### ✨ Cambios
+
+* Corrección: la URL de acción `create` ya no se apunta incorrectamente cuando el modelo no coincide.
+* Actualización de traducciones al español para v4.4.
+* Soporte de datos de arrays en `RepeatableEntry`.
+* Correcciones múltiples en selects dinámicos, subida de archivos, acciones de tablas, relaciones y rendimiento.
+* Habilitado redimensionado de imágenes en el editor enriquecido.
+* Funcionalidad: selección de columnas al exportar en acciones masivas.
+* Arquitectura modular documentada.
+* Nueva funcionalidad: acciones JS en esquemas.
+* Soporte de PHP 8.5 en integración continua.
+* Forzar recorte y validación de relación de aspecto en subida de imágenes.
+* Introducción de pruebas de navegador con Pest.
+* [4.x] Soporte de `UnitEnum` en helpers de autenticación.
+* Callbacks para reordenamiento de tablas.
+* Correcciones de comportamiento en búsquedas globales, filtros, widgets y estados vacíos.
+* [4.x] Soporte para componentes `EmptyState` no contenidos.
+* [4.x] Helper `helperText()` para `FusedGroup`.
+* [4.x] Soporte de flags JSON personalizados en `CodeEntry`.
+* [4.x] Traits para implementación simplificada de 2FA.
+* Corrección: relaciones dentro de `Repeater` guardaban registros vacíos.
+
+**Contribuidores nuevos:** @mjauvin, @a7medKhalid, @jeremylongshore, @chosten, @AlexanderPoellmann
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.5.0)
+
+---
+
+## [v4.4.0] - 19 Dic 2025
+
+### ✨ Cambios
+
+* Mostrar barras de herramientas flotantes para párrafos solo cuando hay texto seleccionado.
+* Aclaración de mensajes y resultados del CLI.
+* Corrección: `getParentRepeaterItem` ahora puede devolver `null`.
+* Funcionalidad de cancelar subida de archivos en el componente File Upload.
+* Corrección: gestión de recuperación de orden desde sesión para evitar errores de asignación.
+* Soporte de idioma hebreo en el selector de fecha y hora.
+* Corrección: desactivar reordenamiento en el gestor de relaciones cuando `isReadonly=true`.
+* Actualización de traducciones faltantes al español.
+* Editor enriquecido: eliminar margen superior entre imágenes adyacentes.
+* Corrección de márgenes no deseados en RichEditor y RichContentRenderer.
+* RichContentRenderer ahora prioriza extensiones PHP de plugins personalizados.
+* Corrección: permitir HTML en tooltips de encabezados.
+* Añadidas traducciones faltantes al luxemburgués (lus).
+* Nuevo campo de contraseña actual con mensaje de validación.
+* Añadidas traducciones faltantes al polaco.
+* Corrección: nombre de método incorrecto en la documentación.
+* Actualización de traducción danesa para la etiqueta "Attach".
+* Corrección: modales anidados en componentes de esquema.
+* Funcionalidad: eliminar separador en títulos cuando `brandName` está vacío.
+* Corrección: actualización de `cachedData` al actualizar datos de gráficos.
+* Corrección: tipos de retorno en documentación de `HasLabel`, `HasIcon` y `HasDescription`.
+* Corrección: aislar filtros persistentes por tenant en sesión.
+* [4.x] Nueva API `summaries()` para controlar visibilidad de resúmenes en tablas.
+* [4.x] Corrección de compatibilidad de la clase `Block` con `CanBeRepeated`.
+* Múltiples correcciones relacionadas con acciones, filtros, relaciones, formularios, editores enriquecidos, tablas, temas oscuros, selección masiva y comportamiento visual.
+* Nuevo icono de acción para notificaciones en base de datos.
+* Funcionalidad: ordenación en relaciones `HasOneThrough`.
+* Soporte de traducciones zh_TW.
+* Nueva funcionalidad: columnas de listas desordenadas.
+* Funcionalidad: control `saved()` para componentes de esquema.
+* Soporte de menciones en el editor enriquecido.
+* Nuevos traits para facilitar implementación de 2FA.
+
+**Contribuidores nuevos:** @csh-tech, @0xxb, @bilogic, @SimonJnsson, @rtraselbd, @dieterwarson, @halaibrahim867, @samuelwei, @martynaskre, @chrizgx
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.4.0)
+
+---
+
+## [v4.3.1] - 10 Dic 2025
+
+### ✨ Cambios
+
+* Soporte de acciones para registros con herencia de tabla única (Single Table Inheritance).
+* Corrección: errores gramaticales en los archivos README del plugin Spatie.
+* Corrección: eliminar columna duplicada en consultas SQL durante la ordenación manual.
+* Mejora de experiencia de usuario del comando `make:theme`.
+* Añadidas traducciones faltantes en eslovaco (sk) y checo (cz).
+* El comando `MakeUserCommand` ahora reconoce el panel actual.
+* Corrección: reutilización indebida de códigos de recuperación de autenticación multifactor.
+
+**Contribuidores nuevos:** @theofanisv, @iamgurjitsingh
+
+[Ver changelog completo en GitHub](https://github.com/filamentphp/filament/releases/tag/v4.3.1)
+
+---
+
 ## [v4.3.0] - 05 Dic 2025
 
 ### ✨ Cambios
